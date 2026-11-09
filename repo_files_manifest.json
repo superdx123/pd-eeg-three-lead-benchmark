@@ -1,20 +1,48 @@
 {
   "files": {
+    ".editorconfig": {
+      "bytes": 411,
+      "sha256": "446a77457dd3d1efe0638fd2b550d3d18dcd68158e1fdbcb1d6d231090327369"
+    },
     ".gitignore": {
       "bytes": 465,
       "sha256": "af62e40621479b79abe004b8467eef670b57d0ee89853f6931e2713b5045b569"
     },
+    "CONTRIBUTING.md": {
+      "bytes": 1643,
+      "sha256": "d044c60f3a2f0c76b98ba974815200936624668225a9b44e6f2ec7b5585d4953"
+    },
+    "LICENSE": {
+      "bytes": 1092,
+      "sha256": "2912e1bbf10f2e401a014b25bd0afe6678d586abbe56b52771101916051fe36d"
+    },
+    "NOTICE.md": {
+      "bytes": 1484,
+      "sha256": "22149281910964a7cee49fd946015faae5b377a0afc0ef45a14fd51e72c1c8f0"
+    },
     "PUBLICATION_STATUS.json": {
-      "bytes": 739,
-      "sha256": "3d1174d5f455f44743de4a5b3f4d54dc6ddf1f5cb65d02d6367e17f870a0f9ef"
+      "bytes": 940,
+      "sha256": "5497515e0d16c2a3b71a9b79a73af8cf5a7b07480e931129ff2cdf612f017c75"
     },
     "README.md": {
-      "bytes": 4133,
-      "sha256": "ecf942766afde7d963391ea01aa23773fd08dddd1c55dc35a9850e5bf7f28a3f"
+      "bytes": 5472,
+      "sha256": "bf8227bb8ccbe21fc911a460e13ed28c6a196111e46f32cebfb4ea3e19cfb03c"
     },
     "archive.lock.json": {
-      "bytes": 592,
-      "sha256": "0401ba85c91d9d7c9d7a4b424569639fbda07b3e66a03e7e3c2237e7a932bb01"
+      "bytes": 697,
+      "sha256": "5e8e9acfbcce7f398a0b501f182c4024e382e6b84fd2298f1461bfa1366206d1"
+    },
+    "docs/ENTRYPOINTS_AND_ATTRIBUTION.md": {
+      "bytes": 1901,
+      "sha256": "78b58b4bd5af6ab34f87461c63dc959ca287526c0a85de3f7053bc66c95678c0"
+    },
+    "docs/RELEASE_CHECKLIST.md": {
+      "bytes": 1250,
+      "sha256": "1c5b46dbdacc359f906308b8e15fecd5dc8010b2a8e69febbfa5d2df74972df5"
+    },
+    "docs/REPRODUCIBILITY.md": {
+      "bytes": 3309,
+      "sha256": "5dcfd78862e65574fb7988fb6622d4587d7965b0dd45c08ebe0a9f38a3520b0c"
     },
     "source_snapshot/ADAPTER_V3_CHANGELOG.md": {
       "bytes": 1161,
@@ -224,16 +252,21 @@
       "bytes": 2081,
       "sha256": "aafafefdd48449ebf3284d6a7f7310af25cbe90474e63a58f97eec36c51d354c"
     },
+    "tests/test_repository_integrity.py": {
+      "bytes": 21644,
+      "sha256": "9e28c6a4a3be0d749855242eebef2474f783b30426dba3585be6004121fea35b"
+    },
     "tools/prepare_source_snapshot.py": {
-      "bytes": 10163,
-      "sha256": "c7b654a78eb207290642ae870922fbc413bada4a3d2cf9863e8e908c40330388"
+      "bytes": 11266,
+      "sha256": "9324f5c52722da6060a03bc4b614765587c3b96353a846419b33fdc5f48cfc76"
     }
   },
   "hash_exempt_generated_artifacts": [
     "local_ready_receipt.json",
     "repo_files_manifest.json"
   ],
-  "schema_version": 1,
-  "scope": "Local static source/configuration/aggregate-result subset, not full payload",
+  "schema_version": 2,
+  "scope": "Private MIT project-source/configuration/aggregate subset, not full archive",
+  "source_snapshot_baseline_commit": "561d59852bb2741dc2187a9b68acad49bbeb1c2d",
   "source_snapshot_files": 52
 }

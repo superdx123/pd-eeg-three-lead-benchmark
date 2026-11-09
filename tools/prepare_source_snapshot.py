@@ -10,6 +10,8 @@ import json
 from pathlib import Path
 import re
 import shutil
+import stat
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +32,9 @@ MANAGED_FILES = {"repo_files_manifest.json", "local_ready_receipt.json"}
 SUPPORT_FILES = {
     "README.md", ".gitignore", "archive.lock.json", "PUBLICATION_STATUS.json",
     "tools/prepare_source_snapshot.py",
+    "LICENSE", "NOTICE.md", "CONTRIBUTING.md", ".editorconfig",
+    "docs/REPRODUCIBILITY.md", "docs/RELEASE_CHECKLIST.md",
+    "docs/ENTRYPOINTS_AND_ATTRIBUTION.md", "tests/test_repository_integrity.py",
 }
 BLOCKED_PARTS = {"weights", "data", "metadata", "provenance", "internal", "private", "ops", "replay_outputs"}
 BLOCKED_EXTENSIONS = {".csv", ".tsv", ".npz", ".npy", ".pt", ".pth", ".ckpt", ".zip", ".7z", ".tar", ".gz", ".edf", ".bdf", ".set", ".fdt", ".log"}
@@ -65,13 +70,26 @@ def snapshot_paths() -> list[str]:
     return sorted(paths)
 
 
+def require_local_regular_path(path: Path, root: Path) -> None:
+    """Reject links/reparse points and resolved paths outside the selected root."""
+    require(not path.is_symlink(), "Repository symlinks are not allowed")
+    is_junction = getattr(path, "is_junction", None)
+    require(not (is_junction and is_junction()), "Repository junctions are not allowed")
+    attributes = getattr(path.lstat(), "st_file_attributes", 0)
+    reparse_flag = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+    require(not (attributes & reparse_flag), "Repository reparse points are not allowed")
+    require(path.resolve(strict=True).is_relative_to(root), "Repository path escapes root")
+
+
 def inventory() -> dict[str, Path]:
     items = {}
+    resolved_root = ROOT.resolve(strict=True)
+    require_local_regular_path(ROOT, resolved_root)
     for path in ROOT.rglob("*"):
         relative = path.relative_to(ROOT)
-        if ".git" in relative.parts:
+        if relative.parts[0] == ".git":
             continue
-        require(not path.is_symlink(), "Repository symlinks are not allowed")
+        require_local_regular_path(path, resolved_root)
         if path.is_file():
             items[relative.as_posix()] = path
     return items
@@ -148,17 +166,17 @@ def build(payload: Path, archive: Path) -> None:
         for relative, path in sorted(inventory().items()) if relative not in MANAGED_FILES
     }
     manifest = {
-        "schema_version": 1,
-        "scope": "Local static source/configuration/aggregate-result subset, not full payload",
+        "schema_version": 2,
+        "scope": "Private MIT project-source/configuration/aggregate subset, not full archive",
         "source_snapshot_files": 52,
         "hash_exempt_generated_artifacts": sorted(MANAGED_FILES),
         "files": entries,
     }
     emit_json(ROOT / "repo_files_manifest.json", manifest)
     receipt = {
-        "schema_version": 1,
-        "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_LICENSE_PENDING",
-        "PUBLICATION_STATUS": "local only / license pending",
+        "schema_version": 2,
+        "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_MIT_PRIVATE",
+        "PUBLICATION_STATUS": "private review staging / MIT project code / not publicly released",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "repo_files_manifest_sha256": digest(ROOT / "repo_files_manifest.json"),
         "manifest_hashed_files": len(entries),
@@ -200,6 +218,7 @@ def verify(payload: Path | None, archive: Path | None) -> None:
 
 
 def main() -> None:
+    require(sys.flags.optimize == 0, "Optimized Python mode is not supported")
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--build", action="store_true", help="Maintainer-only: populate a fresh source_snapshot once")

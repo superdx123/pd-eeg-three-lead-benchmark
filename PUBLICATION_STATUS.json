@@ -1,14 +1,18 @@
 {
   "schema_version": 1,
-  "PUBLICATION_STATUS": "private review staging / license pending / not publicly released",
+  "PUBLICATION_STATUS": "private review staging / MIT project code / not publicly released",
   "target_repository": "superdx123/pd-eeg-three-lead-benchmark",
   "verified_repository_visibility": "private",
-  "state_at_local_preparation": "LOCAL_ONLY_LICENSE_PENDING",
+  "state_at_local_preparation": "PRIVATE_REVIEW_MIT_APPROVED",
+  "code_license": "MIT",
+  "code_license_approved_date": "2026-11-10",
+  "code_license_scope": "Project-authored code and documentation; third-party terms preserved",
+  "visibility_change_requires_explicit_owner_instruction": true,
   "external_operations_performed_by_preparation": false,
   "public_release_authorized": false,
   "blanket_project_code_license_granted": false,
+  "project_authored_code_MIT_approved": true,
   "pending_review": [
-    "Project and archived-source ownership, license and author authorization",
     "Third-party source/dependency licenses and attribution",
     "Weight redistribution authorization and license scope",
     "Archive individual-level privacy review and dataset/study citations"
