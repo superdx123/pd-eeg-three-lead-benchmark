@@ -1,0 +1,103 @@
+{
+  "additional_window_zscore": false,
+  "amp": false,
+  "batch_size": 256,
+  "classifier_channels": [
+    "C3",
+    "Cz",
+    "C4"
+  ],
+  "classifier_shape": [
+    3022,
+    3,
+    512
+  ],
+  "cuda_only_training": true,
+  "dataset_id": "ds002778",
+  "deterministic_algorithms": true,
+  "engineering_gate_only": "Native independent validation and measured memory headroom; no test metric gates or scientific budget changes.",
+  "environment_versions": {
+    "cuda_runtime": "12.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2",
+    "torch": "2.5.1+cu121"
+  },
+  "expected_parameters": 67190,
+  "expected_subjects": 31,
+  "expected_windows": 3022,
+  "external_cohorts": "Not accessed.",
+  "final_training_roles": [
+    "train",
+    "validation"
+  ],
+  "first_timing_task": {
+    "outer_fold": 1,
+    "repeat_index": 1,
+    "seed": 11
+  },
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "historical_results": "Old scores and artifacts are retained; these retraining results are separate, not recovered historical weights.",
+  "historical_source_binding": "Available archived snapshot, not proved identical to historical executed source.",
+  "lr_candidates": [
+    0.0003,
+    0.001
+  ],
+  "max_epochs": 80,
+  "max_workers_per_gpu": 2,
+  "model_name": "DS28_BR_MS_AUG_LS_WD3",
+  "outer_tasks": 125,
+  "patience": 12,
+  "prediction_role": "test",
+  "probability_replay_tolerance": 1e-07,
+  "protocol": "W_subject_overlap_window_cv",
+  "purpose": "New full-checkpoint W retraining on original frozen manifests; historical results retained separately.",
+  "repeats": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "resume_policy": "Only hash-verified PASS skips; trained pending validation validates only; partial/failure stops for review.",
+  "sampling_rate_hz": 256,
+  "schema_version": 1,
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "selection_metric": "bacc",
+  "selection_tie_break": "Validation subject AUC, smaller learning rate, earlier epoch; preserve frozen engine.",
+  "shutdown_policy": "Paid shutdown only after all tasks PASS, summary and complete local SHA-verified copy; never shared/no-GPU hosts.",
+  "split_seeds": [
+    11001,
+    22002,
+    33003,
+    44004,
+    55005
+  ],
+  "stored_channels": [
+    "FC1",
+    "FC2",
+    "C3",
+    "Cz",
+    "C4",
+    "CP1",
+    "CP2"
+  ],
+  "study_id": "ds28_778_w_reproduction_v1",
+  "tf32": false,
+  "threads_per_worker": 2,
+  "threshold": 0.5,
+  "validation_rule": "validation_fold = test_fold % 5 + 1",
+  "window_seconds": 2
+}

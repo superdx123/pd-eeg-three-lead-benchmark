@@ -1,0 +1,48 @@
+{
+  "status": "accepted_existing_summaries_not_new_training",
+  "S_W_primary_metrics": {
+    "S": {
+      "source_summary_sha256": "cfcf0a8f9cb8731f676d13609a850000dfef67f0ecd6116035b5e051749e49bb",
+      "metrics": {
+        "auc": 0.8458333333333333,
+        "balanced_accuracy": 0.7416666666666667,
+        "hc_subjects": 16,
+        "pd_subjects": 15,
+        "sensitivity": 0.7333333333333333,
+        "specificity": 0.75,
+        "subjects": 31
+      },
+      "selected_summary_field": "five_seed_probability_ensemble",
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "threshold": 0.5
+    },
+    "W": {
+      "source_summary_sha256": "4dad0af74f7a0955498e2f650497e1cf2bd22415ecfc37a300e8de8773822999",
+      "metrics": {
+        "auc": 0.9913333333333334,
+        "balanced_accuracy": 0.9378333333333333,
+        "hc_subjects": 16,
+        "pd_subjects": 15,
+        "sensitivity": 0.9706666666666667,
+        "specificity": 0.905,
+        "subjects_per_test_unit": 31,
+        "test_units": 25
+      },
+      "selected_summary_field": "five_seed_probability_ensemble_primary",
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "threshold": 0.5
+    }
+  }
+}

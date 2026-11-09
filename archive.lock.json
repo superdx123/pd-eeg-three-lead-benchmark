@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "archive_name": "ds28_778_LOCAL_REVIEW_CANDIDATE_v3.zip",
+  "sha256": "5ef440c0edde38b0ae4a778add50658a1d13f2bf028237fe77971c7268404b0e",
+  "bytes": 151653878,
+  "archive_payload_files": 361,
+  "archive_reduced_weight_models": 280,
+  "source_receipt_relative_to_candidate": "audit/release_candidate_receipt_v3.json",
+  "download_url": null,
+  "doi": null,
+  "PUBLICATION_STATUS": "local only / license pending",
+  "candidate_status": "PASS_LOCAL_CANDIDATE_V3_NO_PUBLICATION",
+  "adapter_real_forward_inference_tested": false,
+  "public_release_authorized": false
+}

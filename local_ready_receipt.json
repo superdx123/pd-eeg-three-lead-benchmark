@@ -1,0 +1,32 @@
+{
+  "PUBLICATION_STATUS": "local only / license pending",
+  "archive_name": "ds28_778_LOCAL_REVIEW_CANDIDATE_v3.zip",
+  "checks": {
+    "archive_only_file_exclusion_passed": true,
+    "credential_pattern_findings": 0,
+    "explicit_file_whitelist_passed": true,
+    "python_files_statically_parsed": 43,
+    "source_snapshot_byte_comparison_performed": true,
+    "source_snapshot_files": 52
+  },
+  "created_utc": "2026-11-09T14:29:42.997660+00:00",
+  "external_operations_performed": false,
+  "forward_inference_called": false,
+  "frozen_source_or_config_modified": false,
+  "full_frozen_input_bindings_claimed_for_subset": false,
+  "git_initialized_or_committed": false,
+  "locked_archive_byte_size_verified": true,
+  "locked_archive_sha256_verified": true,
+  "manifest_hashed_files": 57,
+  "metrics_recomputed": false,
+  "note": "README/status updated for private review staging; original local preparation receipt preserved internally.",
+  "public_release_authorized": false,
+  "reduced_weight_forward_replay_claimed": false,
+  "repo_files_manifest_sha256": "476348dd33257e1296bc389f648901fc6d595fb84151311e67b5db953c17e2d0",
+  "repository_files_including_manifest_and_receipt": 59,
+  "schema_version": 1,
+  "signal_or_model_object_loaded": false,
+  "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_LICENSE_PENDING",
+  "threshold_selection_called": false,
+  "training_called": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "PUBLICATION_STATUS": "private review staging / license pending / not publicly released",
+  "target_repository": "superdx123/pd-eeg-three-lead-benchmark",
+  "verified_repository_visibility": "private",
+  "state_at_local_preparation": "LOCAL_ONLY_LICENSE_PENDING",
+  "external_operations_performed_by_preparation": false,
+  "public_release_authorized": false,
+  "blanket_project_code_license_granted": false,
+  "pending_review": [
+    "Project and archived-source ownership, license and author authorization",
+    "Third-party source/dependency licenses and attribution",
+    "Weight redistribution authorization and license scope",
+    "Archive individual-level privacy review and dataset/study citations"
+  ]
+}
