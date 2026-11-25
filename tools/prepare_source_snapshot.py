@@ -167,16 +167,17 @@ def build(payload: Path, archive: Path) -> None:
     }
     manifest = {
         "schema_version": 2,
-        "scope": "Private MIT project-source/configuration/aggregate subset, not full archive",
+        "scope": "MIT project-source/configuration/aggregate subset, not full archive",
         "source_snapshot_files": 52,
         "hash_exempt_generated_artifacts": sorted(MANAGED_FILES),
         "files": entries,
     }
     emit_json(ROOT / "repo_files_manifest.json", manifest)
+    publication = json.loads((ROOT / "PUBLICATION_STATUS.json").read_text(encoding="utf-8"))
     receipt = {
         "schema_version": 2,
-        "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_MIT_PRIVATE",
-        "PUBLICATION_STATUS": "private review staging / MIT project code / not publicly released",
+        "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_MIT",
+        "PUBLICATION_STATUS": publication["PUBLICATION_STATUS"],
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "repo_files_manifest_sha256": digest(ROOT / "repo_files_manifest.json"),
         "manifest_hashed_files": len(entries),
@@ -195,7 +196,7 @@ def build(payload: Path, archive: Path) -> None:
         "reduced_weight_forward_replay_claimed": False,
         "git_initialized_or_committed": False,
         "external_operations_performed": False,
-        "public_release_authorized": False,
+        "public_release_authorized": publication["public_release_authorized"],
     }
     emit_json(ROOT / "local_ready_receipt.json", receipt)
     verify(payload, archive)

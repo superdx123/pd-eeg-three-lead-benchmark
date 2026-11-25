@@ -1,20 +1,24 @@
 {
-  "schema_version": 1,
-  "PUBLICATION_STATUS": "private review staging / MIT project code / not publicly released",
+  "schema_version": 2,
+  "PUBLICATION_STATUS": "public code-only release / MIT project code",
   "target_repository": "superdx123/pd-eeg-three-lead-benchmark",
-  "verified_repository_visibility": "private",
-  "state_at_local_preparation": "PRIVATE_REVIEW_MIT_APPROVED",
+  "verified_repository_visibility": "public",
+  "verified_visibility_date": "2026-11-25",
+  "state_at_local_preparation": "PUBLIC_CODE_SUBSET_MIT_APPROVED",
   "code_license": "MIT",
   "code_license_approved_date": "2026-11-10",
   "code_license_scope": "Project-authored code and documentation; third-party terms preserved",
   "visibility_change_requires_explicit_owner_instruction": true,
+  "owner_confirmed_public_date": "2026-11-25",
   "external_operations_performed_by_preparation": false,
-  "public_release_authorized": false,
+  "public_release_authorized": true,
   "blanket_project_code_license_granted": false,
   "project_authored_code_MIT_approved": true,
-  "pending_review": [
-    "Third-party source/dependency licenses and attribution",
-    "Weight redistribution authorization and license scope",
-    "Archive individual-level privacy review and dataset/study citations"
+  "publication_scope": "ds002778 BE-MSNet S/W source, configurations and aggregate results",
+  "weights_or_participant_records_published": false,
+  "remaining_archive_review": [
+    "Reduced-checkpoint forward validation",
+    "Material-specific redistribution authorization",
+    "Participant privacy review"
   ]
 }

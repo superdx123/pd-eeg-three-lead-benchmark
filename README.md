@@ -2,7 +2,7 @@
 
 Research code for **BE-MSNet (Band-Expanded Multi-Scale Network)** on OpenNeuro **ds002778**, with subject-independent evaluation (**S**) and within-record window evaluation (**W**).
 
-Project-authored code and documentation are licensed under [MIT](LICENSE). The repository is currently private, pending the owner's visibility change. This code release covers the ds002778 BE-MSNet S/W experiments; it is not the complete software release for every analysis in the accompanying manuscript.
+Project-authored code and documentation are publicly available under [MIT](LICENSE). This code release covers the ds002778 BE-MSNet S/W experiments; it is not the complete software release for every analysis in the accompanying manuscript.
 
 ## Model names
 

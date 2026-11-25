@@ -21,12 +21,12 @@
       "sha256": "53411cc6ff45608aed38c76a528c03bd24fdd321c1b154362fe29d3d45ea729a"
     },
     "PUBLICATION_STATUS.json": {
-      "bytes": 940,
-      "sha256": "5497515e0d16c2a3b71a9b79a73af8cf5a7b07480e931129ff2cdf612f017c75"
+      "bytes": 1102,
+      "sha256": "80d27f1d0e2cab484cbd1dbdb11fcbce372881a08d42a2c675ad1db8c37d6272"
     },
     "README.md": {
-      "bytes": 4819,
-      "sha256": "6be4dd3328fb6efeeb0f106ab3ff8bd6f66d24194ea7e93348fec4adb1ecad36"
+      "bytes": 4753,
+      "sha256": "43903a9afad83f9c2c6300a65264354cb11898e73d9514f1ebe604781d3dfcbe"
     },
     "archive.lock.json": {
       "bytes": 697,
@@ -37,8 +37,8 @@
       "sha256": "78b58b4bd5af6ab34f87461c63dc959ca287526c0a85de3f7053bc66c95678c0"
     },
     "docs/RELEASE_CHECKLIST.md": {
-      "bytes": 1294,
-      "sha256": "7724729e113336f37a3a175df81096726b78b3db58f2cd964ed420be5149c819"
+      "bytes": 1304,
+      "sha256": "7cc04ecfadfe52ab4660fe994e1e994ab6c5d2069bbeb5fecabda7adb7612e14"
     },
     "docs/REPRODUCIBILITY.md": {
       "bytes": 3309,
@@ -253,12 +253,12 @@
       "sha256": "aafafefdd48449ebf3284d6a7f7310af25cbe90474e63a58f97eec36c51d354c"
     },
     "tests/test_repository_integrity.py": {
-      "bytes": 21644,
-      "sha256": "9e28c6a4a3be0d749855242eebef2474f783b30426dba3585be6004121fea35b"
+      "bytes": 21820,
+      "sha256": "3b81083f35a3f6351f0f39d71d0e0a995260c1893741e9a3e00485b441221588"
     },
     "tools/prepare_source_snapshot.py": {
-      "bytes": 11266,
-      "sha256": "9324f5c52722da6060a03bc4b614765587c3b96353a846419b33fdc5f48cfc76"
+      "bytes": 11344,
+      "sha256": "63ccf5516827bcbde99d40fcf67cdcbcc62ed59bd3e179b0b398e69ad313dd4d"
     }
   },
   "hash_exempt_generated_artifacts": [
@@ -266,6 +266,6 @@
     "repo_files_manifest.json"
   ],
   "schema_version": 2,
-  "scope": "Private MIT project-source/configuration/aggregate subset, not full archive",
+  "scope": "MIT project-source/configuration/aggregate subset, not full archive",
   "source_snapshot_files": 52
 }

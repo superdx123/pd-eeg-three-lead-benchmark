@@ -293,9 +293,10 @@ class RepositoryIntegrityTests(unittest.TestCase):
             "training_called", "forward_inference_called", "metrics_recomputed",
             "signal_or_model_object_loaded", "threshold_selection_called",
             "frozen_source_or_config_modified", "external_operations_performed",
-            "public_release_authorized",
         ):
             self.assertIs(receipt.get(key), False, "local_ready_receipt.json")
+        status = self.read_json("PUBLICATION_STATUS.json")
+        self.assertIs(receipt.get("public_release_authorized"), status.get("public_release_authorized"))
 
     def test_mit_license_present(self) -> None:
         text = safe_repository_file(self.root, "LICENSE").read_text(encoding="utf-8")
@@ -305,16 +306,17 @@ class RepositoryIntegrityTests(unittest.TestCase):
         ):
             self.assertTrue(phrase in text, "LICENSE")
 
-    def test_mit_does_not_authorize_publication(self) -> None:
+    def test_publication_status_matches_code_only_scope(self) -> None:
         status = self.read_json("PUBLICATION_STATUS.json")
-        self.assertEqual(status.get("verified_repository_visibility"), "private", "PUBLICATION_STATUS.json")
-        self.assertIs(status.get("public_release_authorized"), False, "PUBLICATION_STATUS.json")
+        self.assertEqual(status.get("verified_repository_visibility"), "public", "PUBLICATION_STATUS.json")
+        self.assertIs(status.get("public_release_authorized"), True, "PUBLICATION_STATUS.json")
         self.assertIs(status.get("visibility_change_requires_explicit_owner_instruction"), True, "PUBLICATION_STATUS.json")
         self.assertEqual(status.get("code_license"), "MIT", "PUBLICATION_STATUS.json")
         self.assertIs(status.get("project_authored_code_MIT_approved"), True, "PUBLICATION_STATUS.json")
         text = str(status.get("PUBLICATION_STATUS", "")).lower()
-        self.assertTrue("private" in text, "PUBLICATION_STATUS.json")
-        self.assertTrue(any(marker in text for marker in ("not_public", "not public", "not publicly")), "PUBLICATION_STATUS.json")
+        self.assertIn("public", text, "PUBLICATION_STATUS.json")
+        self.assertIs(status.get("weights_or_participant_records_published"), False, "PUBLICATION_STATUS.json")
+        self.assertIn("ds002778", status.get("publication_scope", ""))
 
 
 class SyntheticArchiveTests(unittest.TestCase):

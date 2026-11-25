@@ -6,10 +6,10 @@
 - [x] Source and configurations separated from signals, weights and participant records.
 - [x] Original 52-file source snapshot retained without changing its bytes.
 - [x] Manuscript names mapped to frozen code identifiers in the README.
-- [ ] Pass the updated local integrity tests and verify the uploaded commit.
-- [ ] Complete credential and material checks of the visible Git history.
-- [ ] Owner changes repository visibility from Private to Public.
-- [ ] Verify anonymous access to the README, license and source files.
+- [x] Pass local integrity tests and verify the uploaded source subset.
+- [x] Complete credential and material checks of the visible Git history.
+- [x] Owner changes repository visibility from Private to Public.
+- [ ] Verify anonymous access to the updated public README, license and source files.
 - [ ] Pin the published code version in the manuscript's availability statement.
 
 The code-only release covers ds002778 BE-MSNet S/W. It does not imply that all manuscript analyses or the separate weight/data archive have been published.
