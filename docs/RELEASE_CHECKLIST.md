@@ -1,19 +1,23 @@
-# Before a public release
+# Publication checklist
 
-- [x] Owner approved MIT for project-authored code on 2026-11-10.
-- [x] Private GitHub staging repository created and source subset reviewed.
-- [x] Accepted source/configuration snapshot preserved without changing bytes.
-- [x] Source subset separates code from EEG, weights and individual records.
-- [x] Archive filename, size and SHA-256 are fixed.
-- [ ] Accept the complete archive and reduced-checkpoint inference entry in the
-      recorded environment; distinguish this from checks already completed.
-- [ ] Complete separate material/license review for any data, predictions or model
-      files that will be distributed outside this code repository.
-- [ ] Add verified paper authorship and citation information when available.
-- [ ] Receive the owner's explicit instruction to change visibility to **Public**.
-- [ ] Publish the eligible fixed source/archive version and real persistent links.
-- [ ] Verify access from outside the owner's account and update the manuscript's
-      data/code availability statement to match the actual published material.
+## Code-only repository
 
-MIT approval is not permission to change repository visibility now. No public
-release, DOI, GitHub workflow run or new model replay is asserted by this checklist.
+- [x] MIT license approved for project-authored code.
+- [x] Source and configurations separated from signals, weights and participant records.
+- [x] Original 52-file source snapshot retained without changing its bytes.
+- [x] Manuscript names mapped to frozen code identifiers in the README.
+- [ ] Pass the updated local integrity tests and verify the uploaded commit.
+- [ ] Complete credential and material checks of the visible Git history.
+- [ ] Owner changes repository visibility from Private to Public.
+- [ ] Verify anonymous access to the README, license and source files.
+- [ ] Pin the published code version in the manuscript's availability statement.
+
+The code-only release covers ds002778 BE-MSNet S/W. It does not imply that all manuscript analyses or the separate weight/data archive have been published.
+
+## Separate model and data archive
+
+- [ ] Validate reduced-checkpoint predictions on the matching inputs.
+- [ ] Complete redistribution and participant-privacy review of each proposed file.
+- [ ] Assign a real download location and a fixed version after acceptance.
+
+These archive checks do not block publication of the reviewed code-only subset. Do not upload the local archive as a GitHub attachment before completing them.

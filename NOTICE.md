@@ -1,7 +1,7 @@
 # License and material scope
 
-On 2026-11-10, the repository owner approved the MIT license for project-authored
-code. The repository remains private until a separate explicit publication request.
+The repository owner approved the MIT license for project-authored code on
+2026-11-10. The current release separates project code from data and model archives.
 
 The root MIT license applies to project-authored code and documentation, including
 the preserved project code in `source_snapshot/`. It does not replace any copyright
@@ -21,4 +21,4 @@ individual prediction tables and internal mappings are not included in this Git
 repository; the separate archive has its own publication review and material scope.
 
 The original dataset and study publications remain the appropriate data citations.
-No author names, paper DOI or archive DOI have been fabricated for this preparation.
+No paper DOI or public archive DOI is assigned to this release.

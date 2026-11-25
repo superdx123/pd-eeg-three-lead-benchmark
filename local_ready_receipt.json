@@ -1,5 +1,6 @@
 {
   "PUBLICATION_STATUS": "private review staging / MIT project code / not publicly released",
+  "archive_name": "ds28_778_LOCAL_REVIEW_CANDIDATE_v3.zip",
   "checks": {
     "archive_only_file_exclusion_passed": true,
     "credential_pattern_findings": 0,
@@ -8,26 +9,23 @@
     "source_snapshot_byte_comparison_performed": true,
     "source_snapshot_files": 52
   },
-  "code_license": "MIT",
-  "code_license_approved_date": "2026-11-10",
-  "date_local": "2026-11-10",
+  "created_utc": "2026-11-25T12:19:19.279991+00:00",
   "external_operations_performed": false,
-  "external_operations_performed_by_preparation": false,
   "forward_inference_called": false,
   "frozen_source_or_config_modified": false,
   "full_frozen_input_bindings_claimed_for_subset": false,
+  "git_initialized_or_committed": false,
+  "locked_archive_byte_size_verified": true,
+  "locked_archive_sha256_verified": true,
   "manifest_hashed_files": 65,
   "metrics_recomputed": false,
   "public_release_authorized": false,
   "reduced_weight_forward_replay_claimed": false,
-  "repo_files_manifest_sha256": "ff3c3bd98158759246cc58cb593ec4ed446a3e32fbce59e616fe285811dbf724",
+  "repo_files_manifest_sha256": "00f2201ede4f023dfc76410ded58a81ae7aa86d3d777473d4439e3227e218240",
   "repository_files_including_manifest_and_receipt": 67,
-  "repository_visibility": "private",
   "schema_version": 2,
   "signal_or_model_object_loaded": false,
-  "source_snapshot_unchanged": true,
   "status": "PASS_LOCAL_SOURCE_SUBSET_STATIC_CHECKS_MIT_PRIVATE",
   "threshold_selection_called": false,
-  "timezone": "Asia/Shanghai",
   "training_called": false
 }
