@@ -241,7 +241,7 @@ def cohort_contrast(cohorts):
             for key in points[0]}
 
 
-def analyze_predictions(rows, *, replicates=2000, seed=20260930, threshold=0.5,
+def analyze_predictions(rows, *, replicates=2000, seed=None, threshold=0.5,
                         reference="BE-MSNet"):
     """Aggregate window probabilities, then estimate absolute and paired intervals.
 
@@ -267,7 +267,9 @@ def analyze_predictions(rows, *, replicates=2000, seed=20260930, threshold=0.5,
         for ids, labels, _, _, _, model_folds in matrices.values():
             if ids != subjects or not np.array_equal(labels, truth) or model_folds != folds:
                 raise ValueError("Paired models must use the same subjects, labels and test units")
-        panel_seed = 20261018 if seed == 20260930 and experiment in ("harmonized-lr", "time-blocked") else seed
+        panel_seed = seed
+        if panel_seed is None:
+            panel_seed = 20261018 if experiment in ("harmonized-lr", "time-blocked") else 20260930
         wp, wn = stratified_counts(truth, replicates, panel_seed, alternating=experiment == "representation-control")
         panel = {"cohort": cohort, "protocol": protocol, "experiment": experiment, "source": source, "subjects": len(subjects),
                  "test_units": len(folds), "bootstrap_seed": panel_seed, "models": {}, "paired_differences": []}

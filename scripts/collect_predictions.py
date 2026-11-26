@@ -1,53 +1,41 @@
-"""Collect saved predictions and attach labels in a separate scoring step."""
+"""Collect predictions from a checked experiment plan and attach labels."""
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-import numpy as np
-import pandas as pd
-
-from pd_eeg.data import load_dataset
 from pd_eeg.io import read_json
-from pd_eeg.training.workflow import verify_files
+from pd_eeg.training.collection import collect_predictions
+from pd_eeg.training.workflow import EXPERIMENTS
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, required=True)
+    parser.add_argument("--experiment", choices=EXPERIMENTS, required=True)
     parser.add_argument("--config", type=Path, default=Path("configs/paper.json"))
     parser.add_argument("--project-root", type=Path, default=Path("."))
+    parser.add_argument("--cohort", choices=("ds002778", "ds003490"),
+                        help="Limit the plan to one cohort (source cohort for transfer)")
+    parser.add_argument("--model", action="append", help="Limit the plan to this model; repeatable")
+    parser.add_argument("--allow-partial", action="store_true",
+                        help="Collect an incomplete run set for exploratory analysis")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
-    config, frames, datasets = read_json(args.config), [], {}
-    for path in sorted(args.runs.rglob("predictions.csv")):
-        verify_files(path.parent)
-        frame = pd.read_csv(path, dtype={"subject_id": str})
-        if frame.empty or len(frame.cohort.unique()) != 1:
-            raise ValueError(f"Invalid cohort in {path}")
-        cohort = str(frame.cohort.iloc[0])
-        if cohort not in datasets:
-            settings = config["cohorts"][cohort]
-            datasets[cohort] = load_dataset(args.project_root / settings["path"],
-                                           expected_sha256=settings.get("sha256"))
-        dataset = datasets[cohort]
-        indices = frame.window_id.to_numpy(dtype=np.int64)
-        if len(indices) != len(np.unique(indices)) or np.any(indices < 0) or np.any(indices >= len(dataset.y)):
-            raise ValueError(f"Invalid prediction window indices in {path}")
-        if not np.array_equal(frame.subject_id.astype(str), dataset.groups[indices]):
-            raise ValueError("Prediction subject-to-window mapping differs from the scoring dataset")
-        truth = dataset.y[indices]
-        if "true_label" in frame and not np.array_equal(frame.true_label.to_numpy(), truth):
-            raise ValueError("Saved labels differ from the scoring dataset")
-        frame["true_label"] = truth
-        # Keep separate protocols, variants and source directions distinguishable.
-        frames.append(frame)
-    if not frames:
-        parser.error("No predictions were found")
     if args.output.exists():
-        raise FileExistsError(args.output)
+        parser.error("Output file already exists")
+    try:
+        frame, found, planned = collect_predictions(
+            args.runs, read_json(args.config), args.experiment, project_root=args.project_root,
+            cohort=args.cohort, models=args.model, allow_partial=args.allow_partial,
+        )
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        parser.error(str(error))
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    pd.concat(frames, ignore_index=True).to_csv(args.output, index=False, lineterminator="\n")
+    with args.output.open("x", encoding="utf-8", newline="") as stream:
+        frame.to_csv(stream, index=False, lineterminator="\n")
+    status = "Complete" if found == planned else "Partial (exploratory)"
+    print(f"{status}: {found}/{planned} jobs, {len(frame)} prediction rows.")
 
 
 if __name__ == "__main__":

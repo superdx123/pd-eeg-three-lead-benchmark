@@ -6,12 +6,16 @@ The benchmark uses OpenNeuro [ds002778](https://openneuro.org/datasets/ds002778)
 
 Each NPZ contains `X` (float32 windows × channels × 512), `y` (int64; HC=0, PD=1), `groups` (subject IDs), `recording_ids`, `channel_names`, `sfreq` (256 Hz), `window_sec` (2 s), and `step_sec` (2 s). Arrays use no Python object serialization. Each subject has one diagnosis label and one selected recording. Classifier channels are ordered C3, Cz, C4.
 
+Use `scripts/install_inputs.py` to install the exact inputs required by
+`configs/paper.json`. The commands below write separately to `data/rebuilt/`
+for preprocessing checks and do not replace the registered inputs.
+
 The ds002778 study input contains 3022 already standardized windows from 31 subjects (16 HC, 15 PD), stored in the order FC1, FC2, C3, Cz, C4, CP1, CP2. Import selects the three classifier channels without filtering, resampling, QC or another z-score:
 
 ```sh
 python scripts/prepare_data.py import --cohort ds002778 \
   --source data/input/ds002778_preprocessed_7ch_2s.npz \
-  --output data/processed/ds002778.npz
+  --output data/rebuilt/ds002778.npz
 ```
 
 The command checks the stored study NPZ SHA-256 `f00315271235e23cff51c28604c20e2ec151ca30508953cef44cc4dc1deaf06b`. The selected three-channel output is a new NPZ with a different file hash. The complete raw-to-window execution history for ds002778 cannot be reconstructed from the retained records; obtaining the raw OpenNeuro dataset alone does not recreate this exact input. This prepared file is therefore required to reproduce the reported ds002778 analyses.
@@ -23,7 +27,7 @@ The pure-EO ds003490 study input has 1348 windows from 50 subjects (25 HC, 25 PD
 ```sh
 python scripts/prepare_data.py eo490 \
   --bids-root data/raw/ds003490 \
-  --output data/processed/ds003490.npz
+  --output data/rebuilt/ds003490.npz
 ```
 
 `participants.tsv` determines diagnosis and medication state. PD contributes its unique OFF visit; HC contributes its unique available Rest visit. Ambiguous metadata stop processing. A CSV supplied with `--selection-file` must contain `participant_id,session,label` and agree with the BIDS group and medication fields; no automatic choice between ambiguous visits is made.
@@ -36,9 +40,9 @@ Each end loses 2 s after filtering and resampling. Remaining samples form non-ov
 
 ```sh
 python scripts/prepare_data.py splits \
-  --cohort ds002778 --dataset data/processed/ds002778.npz --output data/splits/ds002778
+  --cohort ds002778 --dataset data/rebuilt/ds002778.npz --output data/rebuilt/splits/ds002778
 python scripts/prepare_data.py splits \
-  --cohort ds003490 --dataset data/processed/ds003490.npz --output data/splits/ds003490
+  --cohort ds003490 --dataset data/rebuilt/ds003490.npz --output data/rebuilt/splits/ds003490
 ```
 
 S uses sorted subject IDs for outer LOSO and stratified five-fold inner validation with seed `730000 + outer_fold` for ds002778 and `830000 + outer_fold` for ds003490. W uses split seeds 11001, 22002, 33003, 44004, 55005. Within each repeat, every subject's window indices are shuffled using `SeedSequence([split_seed, subject_position])` and divided into five balanced test folds. For test fold f, the next cyclic fold is validation and the remaining three are training. Model refitting can then combine the four non-test folds after selection.

@@ -8,11 +8,12 @@ scripts for rebuilding the manuscript figures.
 
 ## Install
 
-Use Python 3.10–3.12 in a virtual environment. For a CPU installation:
+Use Python 3.10–3.12 in a virtual environment. Run the following from a
+source checkout (or source distribution) with the environment active:
 
 ```sh
 python -m pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -e .
+python -m pip install .
 python -m unittest discover -s tests -v
 ```
 
@@ -20,6 +21,9 @@ For the original CUDA setup, use the PyTorch `cu121` wheel index instead.
 The original training used PyTorch 2.5.1 with CUDA 12.1. CPU validation is
 useful for checking the software; it does not establish numerical identity
 with a different device or library build.
+
+The wheel contains the Python package and figure resources. The command-line
+scripts, study configurations and tests are included in the source distribution.
 
 ## Get the benchmark inputs
 
@@ -43,16 +47,16 @@ cannot be reconstructed.
 
 ## Run the benchmark
 
-The following lists a single subject-independent job. Add `--run` to execute
-it and save a checkpoint, selection records and predictions.
+The following lists a single subject-independent job without opening data.
+Add `--run --device cuda` to execute it and save the model and predictions.
 
 ```sh
 python scripts/reproduce.py --experiment benchmark-s --cohort ds002778 --model BE-MSNet --seed 11 --fold 1
 ```
 
-See [Experiments](docs/experiments.md) for the remaining runs, independent
-checkpoint inference and score computation. To render figures directly from
-the included reference estimates without data or training:
+See [Experiments](docs/experiments.md) for training, checkpoint verification
+and scoring. Scoring checks the expected model, seeds, folds and test windows.
+To render figures from the included reference estimates without training:
 
 ```sh
 python scripts/plot_figures.py --output outputs/figures --formats pdf svg
@@ -72,13 +76,10 @@ averages subject-level scores by test fold. These are distinct estimands.
 The estimates above are reference results from the study, not from the
 synthetic software tests.
 
-BE-MSNet expands three recorded leads to 18 input waveforms before the
-multi-scale network. In the original experiment files it was named
-`DS28_BR_MS_AUG_LS_WD3`. The four-layer CNN was named `PrimaryCNN`.
-
 ## Citation and license
 
-Cite the two OpenNeuro dataset records and the accompanying benchmark
-manuscript. Pin the code commit used for your run. Project code is released
+Cite the [software](CITATION.cff), the two OpenNeuro dataset records and the
+accompanying benchmark manuscript. Record the commit used for your run.
+Project code is released
 under [MIT](LICENSE); upstream software and data retain their own terms.
 See [NOTICE](NOTICE.md) for model sources.

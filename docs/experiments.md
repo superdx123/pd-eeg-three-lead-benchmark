@@ -18,27 +18,33 @@ overwritten.
 | `representation-control` | Fixed five subject folds, 50 epochs, full versus R18 |
 
 Select any experiment with `--experiment`, list its jobs, and add `--run`
-to execute. `--cohort`, `--seed`, `--fold`, `--repeat` and `--variant`
-can select subsets. `--smoke` uses a reduced epoch budget and separate
-output directory; do not combine these results with the full runs.
+to execute. Use the cohort, model, seed and fold filters to run jobs in
+batches. `--smoke` saves reduced-epoch runs separately; they are not accepted
+for benchmark scoring.
 Frozen transfer selects on source data only; scoring attaches target
 labels after predictions have been saved.
 
 ```sh
-python scripts/validate_models.py --runs outputs/benchmark-s --device cuda
-python scripts/collect_predictions.py --runs outputs/benchmark-s --output outputs/s-predictions.csv
+python scripts/validate_models.py --runs outputs/benchmark-s/ds002778/S/BE-MSNet --device cuda
+python scripts/collect_predictions.py --runs outputs/benchmark-s --experiment benchmark-s --output outputs/s-predictions.csv
 python scripts/analyze.py --predictions outputs/s-predictions.csv --output outputs/s-statistics
 ```
 
-Use the same fitting device and software versions for checkpoint replay.
-The validator checks a maximum absolute error of 1e-7. Add
-`--trust-sklearn` only for local model files you created or independently
-trust; scikit-learn joblib files are pickle-based. PyTorch state-only
-checkpoints are loaded with `weights_only=True`.
+The collector checks saved file hashes, exact job coverage and the held-out
+window indices from the study splits. For a single model or cohort, point
+`--runs` at that subset and specify the matching `--model` and/or `--cohort`.
+`--allow-partial` is for exploratory analysis only. Directly analyzing an
+arbitrary CSV does not check it against the study plan.
 
-For manuscript intervals, use the appropriate bootstrap seed: 20260930 for
-primary comparisons and the matched representation control, and
-20261018 for harmonized LR and time blocks. Subjects are sampled
+Verify checkpoints from your own runs using the same fitting device and
+software versions. The validator checks maximum absolute prediction error
+against 1e-7. The example verifies PyTorch state-only checkpoints. To verify
+locally created joblib models, also pass `--trust-sklearn`. Do not load
+checkpoints from an untrusted source.
+
+The default bootstrap seed is 20260930 for primary comparisons and the
+matched representation control, and 20261018 for harmonized LR and time
+blocks. Subjects are sampled
 within diagnoses, with the same resample used for paired predictions and
 across W folds. Models are matched by subject and seed ensembles average
 probabilities before calculating AUC or bAcc. The fixed threshold is 0.5.
@@ -55,5 +61,7 @@ python scripts/demographics.py --manifest data/splits/ds002778/s_outer.csv --met
 ```
 
 Training, saved-model inference, and plotting are separate operations.
-The figures use reference aggregate estimates; plots of a new run are
-not silently substituted for the paper values.
+The statistics command compares models within an experiment. Matched
+comparisons across experiments, such as three-seed BE-MSNet versus strict
+TDCNet, are not assembled by this command. The figure command uses the
+included reference estimates rather than scores from new runs.

@@ -84,6 +84,13 @@ class AnalysisTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 analyze_predictions([row], replicates=10)
 
+    def test_explicit_seed_overrides_experiment_default(self):
+        rows = [dict(prediction("h", 0, .2), experiment="harmonized-lr"),
+                dict(prediction("p", 1, .8), experiment="harmonized-lr")]
+        self.assertEqual(analyze_predictions(rows, replicates=3)["panels"][0]["bootstrap_seed"], 20261018)
+        result = analyze_predictions(rows, replicates=3, seed=20260930)
+        self.assertEqual(result["panels"][0]["bootstrap_seed"], 20260930)
+
     def test_subject_labels_are_consistent(self):
         with self.assertRaises(ValueError):
             aggregate_subjects(["same", "same"], [0, 1], [.2, .8])

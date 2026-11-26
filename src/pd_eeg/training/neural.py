@@ -12,7 +12,7 @@ from torch import nn
 
 from pd_eeg.analysis.metrics import aggregate_subjects, binary_metrics
 from pd_eeg.models import build_model, prepare_input
-from .specs import BRAINDDECODE_MODELS, model_name, neural_policy, preferred
+from .specs import BRAINDECODE_MODELS, model_name, neural_policy, preferred
 
 
 def seed_all(seed: int) -> None:
@@ -87,7 +87,7 @@ def probabilities(model, values: torch.Tensor, batch_size: int) -> np.ndarray:
 
 
 def helper_module(name: str):
-    if name in BRAINDDECODE_MODELS:
+    if name in BRAINDECODE_MODELS:
         suffix = "braindecode"
     else:
         suffix = {"EEGNet": "eegnet", "4L-CNN": "cnn", "Lee-CRNN": "lee_crnn"}[name]

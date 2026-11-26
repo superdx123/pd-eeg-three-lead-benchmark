@@ -30,7 +30,7 @@ def main(argv=None):
     parser.add_argument("--smoke", action="store_true", help="Two-epoch engineering check in a separate output directory")
     args = parser.parse_args(argv)
     config = read_json(args.config)
-    chosen = list(jobs(args.experiment, config["cohorts"], models=args.model))
+    chosen = list(jobs(args.experiment, config["cohorts"]))
     for key in ("cohort", "seed", "fold", "repeat", "variant"):
         value = getattr(args, key)
         if value is not None:

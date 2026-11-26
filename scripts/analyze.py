@@ -15,7 +15,7 @@ def main():
     parser.add_argument("--predictions", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--replicates", type=int, default=2000)
-    parser.add_argument("--seed", type=int, default=20260930)
+    parser.add_argument("--seed", type=int, help="Override the experiment's default bootstrap seed")
     parser.add_argument("--reference", default="BE-MSNet")
     args = parser.parse_args()
     if args.output.exists() and any(args.output.iterdir()):

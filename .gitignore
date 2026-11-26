@@ -5,10 +5,14 @@ __pycache__/
 build/
 dist/
 .coverage
-data/
-outputs/
-figures/
+/data/
+/outputs/
+/figures/
 *.pt
+*.pth
+*.ckpt
 *.joblib
 *.npz
 *.zip
+.env
+.env.*

@@ -7,7 +7,7 @@ SEEDS = (11, 22, 33, 44, 55)
 MATCHED_SEEDS = (11, 22, 33)
 MAIN_MODELS = ("BE-MSNet", "EEGConformer", "EEGNeX", "ATCNet", "FBCNet", "EEGNet",
                "4L-CNN", "Lee-CRNN", "PSD-AE-RBFNN", "RBF-SVM", "Spectral-LR")
-BRAINDDECODE_MODELS = frozenset(("EEGConformer", "EEGNeX", "ATCNet", "FBCNet"))
+BRAINDECODE_MODELS = frozenset(("EEGConformer", "EEGNeX", "ATCNet", "FBCNet"))
 ALIASES = {"DS28": "BE-MSNet", "PrimaryCNN": "4L-CNN", "LeeCRNN": "Lee-CRNN",
            "PSDAE": "PSD-AE-RBFNN", "RBFSVM": "RBF-SVM", "LR": "Spectral-LR",
            "HarmonizedLR": "Harmonized-LR", "TDCNet-strict": "TDCNet",
@@ -39,7 +39,7 @@ def neural_policy(name: str) -> NeuralPolicy:
     if name == "BE-MSNet":
         return NeuralPolicy(256, 80, 12, (3e-4, 1e-3), 1e-3,
                             label_smoothing=.05, augmentation=True)
-    if name in BRAINDDECODE_MODELS:
+    if name in BRAINDECODE_MODELS:
         return NeuralPolicy(64, 80, 12, (3e-4, 1e-3), 1e-4)
     if name in ("EEGNet", "4L-CNN"):
         return NeuralPolicy(64, 80, 12, (1e-3,), 1e-4, online_stopping=False)
