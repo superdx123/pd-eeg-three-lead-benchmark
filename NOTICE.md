@@ -1,24 +1,20 @@
-# License and material scope
+# Sources and licenses
 
-The repository owner approved the MIT license for project-authored code on
-2026-11-10. The current release separates project code from data and model archives.
+The MIT license applies to code written for this project. It does not
+relicense third-party dependencies or their models. EEGConformer, EEGNeX,
+ATCNet and FBCNet are imported from Braindecode 1.2.0 at runtime; its source
+is not bundled here.
 
-The root MIT license applies to project-authored code and documentation, including
-the preserved project code in `source_snapshot/`. It does not replace any copyright
-notice or license applicable to third-party material. Dependencies are not
-relicensed by this repository; consult the distributions used in the pinned
-execution environment for their terms. Method references in the archived source
-are summarized in `docs/ENTRYPOINTS_AND_ATTRIBUTION.md`.
+EEGNet, Lee-CRNN, PSD-AE-RBFNN and TDCNet use study adaptations based on
+their published methods:
 
-`source_snapshot/LICENSE_STATUS.md`, other mirrored archive documents and the local
-preparation receipt record the status of the original snapshot before MIT approval.
-They are preserved without changing source hashes. The root `LICENSE` and current
-`PUBLICATION_STATUS.json` describe the current project-code licensing decision.
+- EEGNet: [Lawhern et al.](https://doi.org/10.1088/1741-2552/aace8c)
+- Lee-CRNN: [Lee et al.](https://doi.org/10.1016/j.jneumeth.2021.109282)
+- PSD-AE-RBFNN: [Jibon et al.](https://doi.org/10.1177/20552076241297355)
+- TDCNet: [Xu et al.](https://doi.org/10.1142/S0129065726500486); no
+  upstream repository source is distributed.
 
-OpenNeuro ds002778's official v1.0.5 metadata declares CC0 for that dataset. This is
-not a license for every program or model derived from it. EEG input, model files,
-individual prediction tables and internal mappings are not included in this Git
-repository; the separate archive has its own publication review and material scope.
-
-The original dataset and study publications remain the appropriate data citations.
-No paper DOI or public archive DOI is assigned to this release.
+The [ds002778](https://doi.org/10.18112/openneuro.ds002778.v1.0.5) and
+[ds003490](https://doi.org/10.18112/openneuro.ds003490.v1.1.0) metadata
+declare CC0. Dataset citations remain appropriate for derived input files.
+No model checkpoint or participant-level prediction is stored in Git.

@@ -1,0 +1,692 @@
+{
+  "figures": {
+    "direct_transfer": {
+      "files": {
+        "direct_transfer.pdf": {
+          "bytes": 52134
+        },
+        "direct_transfer.svg": {
+          "bytes": 40621
+        },
+        "direct_transfer.png": {
+          "bytes": 366756
+        }
+      },
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "axis_limits": [
+        -0.035,
+        1.035
+      ],
+      "labeled_ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ],
+      "reference_line": 0.5,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "panels": [
+        {
+          "panel": "a",
+          "metric": "auc",
+          "cohort_or_direction": "778_to_490",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.656,
+              "ci95": [
+                0.49276000000000003,
+                0.816
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6560"
+            },
+            {
+              "model": "ATCNet",
+              "point": 0.6096,
+              "ci95": [
+                0.4448,
+                0.7744399999999998
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6096"
+            },
+            {
+              "model": "Spectral LR",
+              "point": 0.688,
+              "ci95": [
+                0.5344,
+                0.8368
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6880"
+            }
+          ]
+        },
+        {
+          "panel": "b",
+          "metric": "auc",
+          "cohort_or_direction": "490_to_778",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.6875,
+              "ci95": [
+                0.49156249999999996,
+                0.8666666666666667
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6875"
+            },
+            {
+              "model": "ATCNet",
+              "point": 0.5958333333333333,
+              "ci95": [
+                0.39166666666666666,
+                0.7959374999999994
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.5958"
+            },
+            {
+              "model": "Spectral LR",
+              "point": 0.6583333333333333,
+              "ci95": [
+                0.44989583333333333,
+                0.8416666666666667
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6583"
+            }
+          ]
+        },
+        {
+          "panel": "c",
+          "metric": "balanced_accuracy",
+          "cohort_or_direction": "778_to_490",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.62,
+              "ci95": [
+                0.5,
+                0.74
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6200"
+            },
+            {
+              "model": "ATCNet",
+              "point": 0.5,
+              "ci95": [
+                0.4,
+                0.6
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.5000"
+            },
+            {
+              "model": "Spectral LR",
+              "point": 0.5800000000000001,
+              "ci95": [
+                0.44000000000000006,
+                0.72
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.5800"
+            }
+          ]
+        },
+        {
+          "panel": "d",
+          "metric": "balanced_accuracy",
+          "cohort_or_direction": "490_to_778",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.6416666666666666,
+              "ci95": [
+                0.475,
+                0.8041666666666667
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.6417"
+            },
+            {
+              "model": "ATCNet",
+              "point": 0.58125,
+              "ci95": [
+                0.41666666666666663,
+                0.7458333333333333
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.5813"
+            },
+            {
+              "model": "Spectral LR",
+              "point": 0.5791666666666666,
+              "ci95": [
+                0.3916145833333333,
+                0.74375
+              ],
+              "source": {
+                "payload": "plot_data.json",
+                "metric_field": "value.point",
+                "ci95_field": "value.ci95"
+              },
+              "estimate_label": "0.5792"
+            }
+          ]
+        }
+      ],
+      "xlim": [
+        -0.035,
+        1.035
+      ],
+      "ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ]
+    },
+    "time_blocked_w": {
+      "files": {
+        "time_blocked_w.pdf": {
+          "bytes": 48954
+        },
+        "time_blocked_w.svg": {
+          "bytes": 36201
+        },
+        "time_blocked_w.png": {
+          "bytes": 294963
+        }
+      },
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "axis_limits": [
+        -0.035,
+        1.035
+      ],
+      "labeled_ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ],
+      "reference_line": 0.5,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "panels": [
+        {
+          "panel": "a",
+          "metric": "auc",
+          "cohort_or_direction": "ds002778",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.9883333333333333,
+              "ci95": [
+                0.965,
+                1
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_auc",
+                "ci95_field": "primary_auc_ci95"
+              },
+              "estimate_label": "0.9883"
+            },
+            {
+              "model": "Harmonized LR",
+              "point": 0.7308333333333333,
+              "ci95": [
+                0.5658125,
+                0.8625208333333333
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_auc",
+                "ci95_field": "primary_auc_ci95"
+              },
+              "estimate_label": "0.7308"
+            }
+          ]
+        },
+        {
+          "panel": "b",
+          "metric": "auc",
+          "cohort_or_direction": "ds003490_pureEO",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.9187200000000001,
+              "ci95": [
+                0.848,
+                0.97024
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_auc",
+                "ci95_field": "primary_auc_ci95"
+              },
+              "estimate_label": "0.9187"
+            },
+            {
+              "model": "Harmonized LR",
+              "point": 0.7596800000000001,
+              "ci95": [
+                0.6383440000000001,
+                0.8630479999999998
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_auc",
+                "ci95_field": "primary_auc_ci95"
+              },
+              "estimate_label": "0.7597"
+            }
+          ]
+        },
+        {
+          "panel": "c",
+          "metric": "bacc",
+          "cohort_or_direction": "ds002778",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.9220833333333334,
+              "ci95": [
+                0.8566666666666667,
+                0.98
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_bacc",
+                "ci95_field": "primary_bacc_ci95"
+              },
+              "estimate_label": "0.9221"
+            },
+            {
+              "model": "Harmonized LR",
+              "point": 0.6520833333333333,
+              "ci95": [
+                0.51875,
+                0.7763333333333329
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_bacc",
+                "ci95_field": "primary_bacc_ci95"
+              },
+              "estimate_label": "0.6521"
+            }
+          ]
+        },
+        {
+          "panel": "d",
+          "metric": "bacc",
+          "cohort_or_direction": "ds003490_pureEO",
+          "records": [
+            {
+              "model": "BE-MSNet",
+              "point": 0.8240000000000001,
+              "ci95": [
+                0.748,
+                0.892
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_bacc",
+                "ci95_field": "primary_bacc_ci95"
+              },
+              "estimate_label": "0.8240"
+            },
+            {
+              "model": "Harmonized LR",
+              "point": 0.6719999999999999,
+              "ci95": [
+                0.568,
+                0.7680999999999996
+              ],
+              "source": {
+                "payload": "time_blocked_data_v14.json",
+                "metric_field": "primary_bacc",
+                "ci95_field": "primary_bacc_ci95"
+              },
+              "estimate_label": "0.6720"
+            }
+          ]
+        }
+      ],
+      "xlim": [
+        -0.035,
+        1.035
+      ],
+      "ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ]
+    }
+  }
+}

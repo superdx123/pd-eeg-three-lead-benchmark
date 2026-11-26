@@ -1,0 +1,19 @@
+{
+  "cohort": "ds003490",
+  "protocol": "five-fold subject-independent representation control",
+  "seeds": [11, 22, 33],
+  "epochs": 50,
+  "input_shape": [18, 512],
+  "parameters_per_model": 67190,
+  "full": {"auc": 0.7008, "balanced_accuracy": 0.6000},
+  "R18": {"auc": 0.7088, "balanced_accuracy": 0.5800},
+  "per_seed": [
+    {"seed": 11, "full_auc": 0.6976, "full_balanced_accuracy": 0.6200, "R18_auc": 0.6816, "R18_balanced_accuracy": 0.6400},
+    {"seed": 22, "full_auc": 0.6704, "full_balanced_accuracy": 0.5400, "R18_auc": 0.6976, "R18_balanced_accuracy": 0.5800},
+    {"seed": 33, "full_auc": 0.7392, "full_balanced_accuracy": 0.6400, "R18_auc": 0.7072, "R18_balanced_accuracy": 0.5600}
+  ],
+  "paired_differences": [
+    {"metric": "auc", "point": -0.0080, "ci95": [-0.0672, 0.0544]},
+    {"metric": "balanced_accuracy", "point": 0.0200, "ci95": [-0.0800, 0.1200]}
+  ]
+}

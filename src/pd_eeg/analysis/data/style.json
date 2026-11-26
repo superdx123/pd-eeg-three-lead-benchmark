@@ -1,0 +1,39 @@
+{
+  "palette": {
+    "chart_focal_fill": "#8FAADC",
+    "chart_focal_line": "#648BC0",
+    "chart_comparator_fill": "#F4B183",
+    "chart_comparator_line": "#C47C4B",
+    "flow_light_blue": "#E0EBF4",
+    "flow_blue": "#B2CDE4",
+    "flow_mid_blue": "#90B7D8",
+    "flow_blue_outline": "#1B364D",
+    "flow_coral": "#FCB2AF",
+    "flow_coral_outline": "#7A0A04",
+    "ink": "#202020",
+    "secondary_text": "#606060",
+    "axis": "#606060",
+    "grid": "#E1E1E1",
+    "reference": "#999999",
+    "white": "#FFFFFF",
+    "validation_fill": "#E3E3E3"
+  },
+  "plot_geometry": {
+    "width_inches": 7.1,
+    "font": "Arial",
+    "font_pt": 9.7,
+    "tick_font_pt": 9.2,
+    "title_font_pt": 11.1,
+    "axis_line_pt": 0.7,
+    "grid_line_pt": 0.55,
+    "interval_line_pt": 1.12,
+    "reference_line_pt": 0.95,
+    "reference_dash_pt": [
+      2.6,
+      2.4
+    ],
+    "row_shading": false,
+    "background": "white",
+    "png_dpi": 600
+  }
+}

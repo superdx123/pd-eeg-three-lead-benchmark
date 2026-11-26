@@ -1,0 +1,55 @@
+{
+  "filename": "benchmark-inputs-v1.0.0.zip",
+  "bytes": 47985464,
+  "sha256": "1f852e5f7fdb1cb7ec208337708caccb275a9a971b76de70a3bdb57009966853",
+  "members": {
+    "data/processed/ds002778.npz": {
+      "sha256": "f00315271235e23cff51c28604c20e2ec151ca30508953cef44cc4dc1deaf06b",
+      "bytes": 40169703
+    },
+    "data/processed/ds003490.npz": {
+      "sha256": "87e44b301c4651335d6576561108861c2b11611ef288d0cbd629465c652c1d8a",
+      "bytes": 7705077
+    },
+    "data/splits/ds002778/s_outer.csv": {
+      "sha256": "9c73f7082d30122d2d38c8b6405f1b3eed21df99b5511ddaa06cf9cf3076f0cc",
+      "bytes": 1154
+    },
+    "data/splits/ds002778/s_inner.csv": {
+      "sha256": "b822301172c1ab9648718bbeee9562fe6b9c233ba3086e68bb6cc724f30a4d4a",
+      "bytes": 49516
+    },
+    "data/splits/ds002778/w_windows.csv": {
+      "sha256": "9f2d238f2672795e34fad5e4962dbec12f817a9a58527f0685723080f0aa38db",
+      "bytes": 806161
+    },
+    "data/splits/ds003490/s_outer.csv": {
+      "sha256": "6ee6826df1927525455f0f2dc0cd7fc78356c8a99c20e665749af97c052c174b",
+      "bytes": 1797
+    },
+    "data/splits/ds003490/s_inner.csv": {
+      "sha256": "0e67a365168a98b7d1b934486345cdd1e9d60b21bc9e1dc4b8cced7fa33effd0",
+      "bytes": 127065
+    },
+    "data/splits/ds003490/w_windows.csv": {
+      "sha256": "b804e1ef5d90184f61c99f457a54e292c958bf0b365373ba5b4343ce68c5c0fd",
+      "bytes": 351748
+    },
+    "data/times/ds002778.csv": {
+      "sha256": "f37f197cd06d6223a022881dc79a570af302da3c0205e0232b646fe0f1ac8b47",
+      "bytes": 125343
+    },
+    "data/times/ds003490.csv": {
+      "sha256": "76783dafbf789108ffff76fde0f41cecafd67a06f5d0c1094cfb009ff71d250c",
+      "bytes": 65428
+    },
+    "DATASETS.md": {
+      "sha256": "465a2bdfcbad984c89157702748405d103abe674ef8996299c6708756921e1d0",
+      "bytes": 2541
+    },
+    "SHA256SUMS": {
+      "sha256": "1f66f2c5267a1b9805eadf8a55e74c8b6b386b2610ccd699ed9776d881247d1b",
+      "bytes": 1044
+    }
+  }
+}

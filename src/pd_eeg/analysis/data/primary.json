@@ -1,0 +1,864 @@
+{
+  "subject_independent": {
+    "auc": {
+      "point": 0.8458333333333333,
+      "ci95": [
+        0.6791666666666667,
+        0.9708333333333333
+      ]
+    },
+    "balanced_accuracy": {
+      "point": 0.7416666666666667,
+      "ci95": [
+        0.5811979166666668,
+        0.8729166666666667
+      ]
+    },
+    "sensitivity": {
+      "point": 0.7333333333333333,
+      "ci95": [
+        0.5333333333333333,
+        0.9333333333333333
+      ]
+    },
+    "specificity": {
+      "point": 0.75,
+      "ci95": [
+        0.5,
+        0.9375
+      ]
+    },
+    "brier_score": {
+      "point": 0.17449579963080267,
+      "ci95": [
+        0.12863788315962518,
+        0.22871209703339349
+      ]
+    }
+  },
+  "paired_subject_independent": [
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGConformer",
+      "metric": "auc",
+      "difference": 0.04166666666666663,
+      "ci95": [
+        -0.03749999999999998,
+        0.12916666666666665
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGConformer",
+      "metric": "balanced_accuracy",
+      "difference": -0.006249999999999978,
+      "ci95": [
+        -0.1395833333333334,
+        0.125
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGNeX",
+      "metric": "auc",
+      "difference": 0.09166666666666667,
+      "ci95": [
+        -0.02083333333333337,
+        0.22916666666666674
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGNeX",
+      "metric": "balanced_accuracy",
+      "difference": 0.09583333333333344,
+      "ci95": [
+        0,
+        0.19588541666666645
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "ATCNet",
+      "metric": "auc",
+      "difference": 0.1416666666666666,
+      "ci95": [
+        0.033333333333333326,
+        0.2875
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "ATCNet",
+      "metric": "balanced_accuracy",
+      "difference": 0.12291666666666667,
+      "ci95": [
+        -0.004218750000000088,
+        0.25
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "FBCNet",
+      "metric": "auc",
+      "difference": 0.1333333333333333,
+      "ci95": [
+        -0.01666666666666672,
+        0.3041666666666666
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "FBCNet",
+      "metric": "balanced_accuracy",
+      "difference": 0.03125,
+      "ci95": [
+        -0.1312500000000001,
+        0.19843749999999724
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGNet",
+      "metric": "auc",
+      "difference": 0.19999999999999996,
+      "ci95": [
+        0.03739583333333332,
+        0.39583333333333326
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "EEGNet",
+      "metric": "balanced_accuracy",
+      "difference": 0.1312500000000001,
+      "ci95": [
+        0,
+        0.29166666666666674
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "4L-CNN",
+      "metric": "auc",
+      "difference": 0.1791666666666667,
+      "ci95": [
+        0.004166666666666652,
+        0.3834374999999995
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "4L-CNN",
+      "metric": "balanced_accuracy",
+      "difference": 0.12916666666666665,
+      "ci95": [
+        -0.09999999999999992,
+        0.33338541666666643
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "Lee-CRNN",
+      "metric": "auc",
+      "difference": 0.17083333333333328,
+      "ci95": [
+        -0.01666666666666661,
+        0.36250000000000004
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "Lee-CRNN",
+      "metric": "balanced_accuracy",
+      "difference": 0.1625000000000001,
+      "ci95": [
+        -0.027135416666666676,
+        0.35625000000000007
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "PSD-AE-RBFNN",
+      "metric": "auc",
+      "difference": 0.26249999999999996,
+      "ci95": [
+        0.06666666666666665,
+        0.47093749999999945
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "PSD-AE-RBFNN",
+      "metric": "balanced_accuracy",
+      "difference": 0.10000000000000009,
+      "ci95": [
+        -0.06041666666666656,
+        0.26249999999999996
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "RBF-SVM",
+      "metric": "auc",
+      "difference": 0.35833333333333334,
+      "ci95": [
+        0.17489583333333328,
+        0.5625
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "RBF-SVM",
+      "metric": "balanced_accuracy",
+      "difference": 0.28958333333333336,
+      "ci95": [
+        0.09786458333333327,
+        0.4833333333333334
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "TDCNet†",
+      "metric": "auc",
+      "difference": 0.17500000000000004,
+      "ci95": [
+        0.050000000000000044,
+        0.31666666666666665
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "TDCNet†",
+      "metric": "balanced_accuracy",
+      "difference": 0.03125,
+      "ci95": [
+        -0.06874999999999998,
+        0.15833333333333333
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "Spectral LR",
+      "metric": "auc",
+      "difference": 0.425,
+      "ci95": [
+        0.2416666666666667,
+        0.625
+      ]
+    },
+    {
+      "reference": "BE-MSNet",
+      "baseline": "Spectral LR",
+      "metric": "balanced_accuracy",
+      "difference": 0.25625000000000003,
+      "ci95": [
+        0.0625,
+        0.45005208333333313
+      ]
+    }
+  ],
+  "within_recording": {
+    "auc": {
+      "point": 0.9913333333333334,
+      "ci95": [
+        0.9686624999999999,
+        1
+      ]
+    },
+    "balanced_accuracy": {
+      "point": 0.9378333333333333,
+      "ci95": [
+        0.8614895833333331,
+        0.9974166666666667
+      ]
+    },
+    "sensitivity": {
+      "point": 0.9706666666666668,
+      "ci95": [
+        0.9146666666666668,
+        1
+      ]
+    },
+    "specificity": {
+      "point": 0.905,
+      "ci95": [
+        0.7575,
+        1
+      ]
+    },
+    "brier_score": {
+      "point": 0.08359876444686623,
+      "ci95": [
+        0.05956595076692981,
+        0.1115662136109548
+      ]
+    }
+  },
+  "probability_bins": [
+    {
+      "lower": 0,
+      "upper": 0.2,
+      "upper_inclusive": false,
+      "count": 2,
+      "mean_predicted_probability": 0.15323790189699538,
+      "observed_positive_fraction": 0
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.4,
+      "upper_inclusive": false,
+      "count": 7,
+      "mean_predicted_probability": 0.2910974849390942,
+      "observed_positive_fraction": 0
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.6,
+      "upper_inclusive": false,
+      "count": 12,
+      "mean_predicted_probability": 0.4840936352276492,
+      "observed_positive_fraction": 0.5833333333333334
+    },
+    {
+      "lower": 0.6,
+      "upper": 0.8,
+      "upper_inclusive": false,
+      "count": 8,
+      "mean_predicted_probability": 0.7109535634494697,
+      "observed_positive_fraction": 0.875
+    },
+    {
+      "lower": 0.8,
+      "upper": 1,
+      "upper_inclusive": true,
+      "count": 2,
+      "mean_predicted_probability": 0.8636276482944893,
+      "observed_positive_fraction": 0.5
+    }
+  ],
+  "calibration": {
+    "S_778": {
+      "panel": "S_778",
+      "status": "PASS",
+      "model": "BE-MSNet",
+      "kind": "S",
+      "target_cohort": "ds002778",
+      "independent_subjects": 31,
+      "ensemble_seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "threshold": 0.5,
+      "source_role": "new_checkpoint_retraining",
+      "brier_score": 0.17449579963080267,
+      "bins": [
+        {
+          "lower": 0,
+          "upper": 0.2,
+          "upper_inclusive": false,
+          "count": 2,
+          "mean_predicted_probability": 0.15323790189699538,
+          "observed_positive_fraction": 0
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.4,
+          "upper_inclusive": false,
+          "count": 7,
+          "mean_predicted_probability": 0.2910974849390942,
+          "observed_positive_fraction": 0
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.6,
+          "upper_inclusive": false,
+          "count": 12,
+          "mean_predicted_probability": 0.4840936352276492,
+          "observed_positive_fraction": 0.5833333333333334
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.8,
+          "upper_inclusive": false,
+          "count": 8,
+          "mean_predicted_probability": 0.7109535634494697,
+          "observed_positive_fraction": 0.875
+        },
+        {
+          "lower": 0.8,
+          "upper": 1,
+          "upper_inclusive": true,
+          "count": 2,
+          "mean_predicted_probability": 0.8636276482944893,
+          "observed_positive_fraction": 0.5
+        }
+      ],
+      "conditional_intervals": {
+        "intervals": {
+          "brier_score": [
+            0.12863788315962518,
+            0.22871209703339349
+          ]
+        },
+        "method": {
+          "replicates": 2000,
+          "seed": 20260930,
+          "unit": "subject",
+          "stratification": "PD_HC",
+          "interval": "percentile_95_conditional_on_fixed_predictions",
+          "refit": false
+        }
+      },
+      "fit_called": false,
+      "recalibration_called": false,
+      "threshold_changed": false
+    },
+    "S_490": {
+      "panel": "S_490",
+      "status": "PASS",
+      "model": "BE-MSNet",
+      "kind": "S",
+      "target_cohort": "ds003490_eo",
+      "independent_subjects": 50,
+      "ensemble_seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "threshold": 0.5,
+      "source_role": "retained_original_accepted_probabilities",
+      "brier_score": 0.21358679744337677,
+      "bins": [
+        {
+          "lower": 0,
+          "upper": 0.2,
+          "upper_inclusive": false,
+          "count": 2,
+          "mean_predicted_probability": 0.1512055464847772,
+          "observed_positive_fraction": 0
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.4,
+          "upper_inclusive": false,
+          "count": 13,
+          "mean_predicted_probability": 0.282364809885417,
+          "observed_positive_fraction": 0.3076923076923077
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.6,
+          "upper_inclusive": false,
+          "count": 21,
+          "mean_predicted_probability": 0.48464190250055655,
+          "observed_positive_fraction": 0.47619047619047616
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.8,
+          "upper_inclusive": false,
+          "count": 11,
+          "mean_predicted_probability": 0.6988854685465896,
+          "observed_positive_fraction": 0.8181818181818182
+        },
+        {
+          "lower": 0.8,
+          "upper": 1,
+          "upper_inclusive": true,
+          "count": 3,
+          "mean_predicted_probability": 0.8466373089470981,
+          "observed_positive_fraction": 0.6666666666666666
+        }
+      ],
+      "conditional_intervals": {
+        "intervals": {
+          "brier_score": [
+            0.16839829192694206,
+            0.2587843461759357
+          ]
+        },
+        "method": {
+          "replicates": 2000,
+          "seed": 20260930,
+          "unit": "subject",
+          "stratification": "PD_HC",
+          "interval": "percentile_95_conditional_on_fixed_predictions",
+          "refit": false
+        }
+      },
+      "fit_called": false,
+      "recalibration_called": false,
+      "threshold_changed": false
+    },
+    "transfer_778_to_490": {
+      "panel": "transfer_778_to_490",
+      "status": "PASS",
+      "model": "BE-MSNet",
+      "kind": "transfer",
+      "target_cohort": "ds003490_eo",
+      "independent_subjects": 50,
+      "ensemble_seeds": [
+        11,
+        22,
+        33
+      ],
+      "threshold": 0.5,
+      "source_role": "retained_original_accepted_probabilities",
+      "brier_score": 0.24466253667755616,
+      "bins": [
+        {
+          "lower": 0,
+          "upper": 0.2,
+          "upper_inclusive": false,
+          "count": 0,
+          "mean_predicted_probability": null,
+          "observed_positive_fraction": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.4,
+          "upper_inclusive": false,
+          "count": 11,
+          "mean_predicted_probability": 0.3145794155301117,
+          "observed_positive_fraction": 0.45454545454545453
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.6,
+          "upper_inclusive": false,
+          "count": 17,
+          "mean_predicted_probability": 0.5241177265989782,
+          "observed_positive_fraction": 0.29411764705882354
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.8,
+          "upper_inclusive": false,
+          "count": 17,
+          "mean_predicted_probability": 0.6991162442763863,
+          "observed_positive_fraction": 0.6470588235294118
+        },
+        {
+          "lower": 0.8,
+          "upper": 1,
+          "upper_inclusive": true,
+          "count": 5,
+          "mean_predicted_probability": 0.8525352505484113,
+          "observed_positive_fraction": 0.8
+        }
+      ],
+      "conditional_intervals": {
+        "intervals": {
+          "brier_score": [
+            0.19777028608836209,
+            0.2943955496201578
+          ]
+        },
+        "method": {
+          "replicates": 2000,
+          "seed": 20260930,
+          "unit": "subject",
+          "stratification": "PD_HC",
+          "interval": "percentile_95_conditional_on_fixed_predictions",
+          "refit": false
+        }
+      },
+      "fit_called": false,
+      "recalibration_called": false,
+      "threshold_changed": false
+    },
+    "transfer_490_to_778": {
+      "panel": "transfer_490_to_778",
+      "status": "PASS",
+      "model": "BE-MSNet",
+      "kind": "transfer",
+      "target_cohort": "ds002778",
+      "independent_subjects": 31,
+      "ensemble_seeds": [
+        11,
+        22,
+        33
+      ],
+      "threshold": 0.5,
+      "source_role": "retained_original_accepted_probabilities",
+      "brier_score": 0.22714926677416222,
+      "bins": [
+        {
+          "lower": 0,
+          "upper": 0.2,
+          "upper_inclusive": false,
+          "count": 0,
+          "mean_predicted_probability": null,
+          "observed_positive_fraction": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.4,
+          "upper_inclusive": false,
+          "count": 8,
+          "mean_predicted_probability": 0.3388532962903357,
+          "observed_positive_fraction": 0.125
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.6,
+          "upper_inclusive": false,
+          "count": 18,
+          "mean_predicted_probability": 0.490285699935053,
+          "observed_positive_fraction": 0.6111111111111112
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.8,
+          "upper_inclusive": false,
+          "count": 5,
+          "mean_predicted_probability": 0.6917442158670025,
+          "observed_positive_fraction": 0.6
+        },
+        {
+          "lower": 0.8,
+          "upper": 1,
+          "upper_inclusive": true,
+          "count": 0,
+          "mean_predicted_probability": null,
+          "observed_positive_fraction": null
+        }
+      ],
+      "conditional_intervals": {
+        "intervals": {
+          "brier_score": [
+            0.18940947222669527,
+            0.26731373882305665
+          ]
+        },
+        "method": {
+          "replicates": 2000,
+          "seed": 20260930,
+          "unit": "subject",
+          "stratification": "PD_HC",
+          "interval": "percentile_95_conditional_on_fixed_predictions",
+          "refit": false
+        }
+      },
+      "fit_called": false,
+      "recalibration_called": false,
+      "threshold_changed": false
+    }
+  },
+  "per_seed_s": [
+    {
+      "auc": 0.8208333333333333,
+      "balanced_accuracy": 0.7395833333333333,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 11,
+      "sensitivity": 0.6666666666666666,
+      "specificity": 0.8125,
+      "subjects": 31,
+      "windows": 3022
+    },
+    {
+      "auc": 0.8458333333333333,
+      "balanced_accuracy": 0.8395833333333333,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 22,
+      "sensitivity": 0.8666666666666667,
+      "specificity": 0.8125,
+      "subjects": 31,
+      "windows": 3022
+    },
+    {
+      "auc": 0.8958333333333334,
+      "balanced_accuracy": 0.8041666666666667,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 33,
+      "sensitivity": 0.7333333333333333,
+      "specificity": 0.875,
+      "subjects": 31,
+      "windows": 3022
+    },
+    {
+      "auc": 0.8416666666666667,
+      "balanced_accuracy": 0.8375,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 44,
+      "sensitivity": 0.8,
+      "specificity": 0.875,
+      "subjects": 31,
+      "windows": 3022
+    },
+    {
+      "auc": 0.7083333333333334,
+      "balanced_accuracy": 0.6791666666666667,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 55,
+      "sensitivity": 0.7333333333333333,
+      "specificity": 0.625,
+      "subjects": 31,
+      "windows": 3022
+    }
+  ],
+  "per_seed_w": [
+    {
+      "auc": 0.9868333333333333,
+      "balanced_accuracy": 0.919,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 11,
+      "sensitivity": 0.9279999999999999,
+      "specificity": 0.91,
+      "subjects_per_test_unit": 31,
+      "test_units": 25
+    },
+    {
+      "auc": 0.9915,
+      "balanced_accuracy": 0.9294166666666667,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 22,
+      "sensitivity": 0.9413333333333334,
+      "specificity": 0.9175,
+      "subjects_per_test_unit": 31,
+      "test_units": 25
+    },
+    {
+      "auc": 0.983,
+      "balanced_accuracy": 0.9159999999999999,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 33,
+      "sensitivity": 0.9520000000000001,
+      "specificity": 0.88,
+      "subjects_per_test_unit": 31,
+      "test_units": 25
+    },
+    {
+      "auc": 0.985,
+      "balanced_accuracy": 0.9251666666666667,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 44,
+      "sensitivity": 0.9253333333333333,
+      "specificity": 0.925,
+      "subjects_per_test_unit": 31,
+      "test_units": 25
+    },
+    {
+      "auc": 0.9851666666666666,
+      "balanced_accuracy": 0.9272499999999999,
+      "hc_subjects": 16,
+      "pd_subjects": 15,
+      "seed": 55,
+      "sensitivity": 0.9520000000000001,
+      "specificity": 0.9025,
+      "subjects_per_test_unit": 31,
+      "test_units": 25
+    }
+  ],
+  "secondary_w_oof": {
+    "auc": 0.9958333333333333,
+    "balanced_accuracy": 0.9495833333333333,
+    "hc_subjects": 16,
+    "pd_subjects": 15,
+    "sensitivity": 0.9866666666666667,
+    "specificity": 0.9125,
+    "subjects_per_test_unit": 31,
+    "test_units": 5
+  },
+  "w_minus_s": {
+    "auc": 0.14550000000000007,
+    "balanced_accuracy": 0.1961666666666666
+  },
+  "cohort_contrast": {
+    "auc": {
+      "difference_778": 0.1333333333333333,
+      "difference_490": -0.0464,
+      "point": 0.1797333333333333,
+      "ci95": [
+        -0.004799999999999918,
+        0.37523999999999985
+      ],
+      "within_778_ci95": [
+        -0.01666666666666672,
+        0.2958333333333333
+      ],
+      "within_490_ci95": [
+        -0.15839999999999999,
+        0.060800000000000076
+      ]
+    },
+    "balanced_accuracy": {
+      "difference_778": 0.03125,
+      "difference_490": -0.020000000000000018,
+      "point": 0.05125000000000002,
+      "ci95": [
+        -0.15333333333333332,
+        0.2579166666666667
+      ],
+      "within_778_ci95": [
+        -0.1333333333333333,
+        0.1958333333333333
+      ],
+      "within_490_ci95": [
+        -0.14,
+        0.09999999999999998
+      ]
+    }
+  },
+  "initial_subject_independent": {
+    "auc": {
+      "point": 0.8458333333333333,
+      "ci95": [
+        0.6875,
+        0.9666666666666667
+      ]
+    },
+    "balanced_accuracy": {
+      "point": 0.80625,
+      "ci95": [
+        0.6479166666666667,
+        0.9354166666666667
+      ]
+    },
+    "sensitivity": {
+      "point": 0.8,
+      "ci95": [
+        0.6,
+        1
+      ]
+    },
+    "specificity": {
+      "point": 0.8125,
+      "ci95": [
+        0.625,
+        1
+      ]
+    }
+  },
+  "retained_cohort_model_points": {
+    "BE-MSNet": {
+      "auc": 0.7248,
+      "balanced_accuracy": 0.7,
+      "sensitivity": 0.68,
+      "specificity": 0.72,
+      "brier_score": 0.21358679744337677
+    },
+    "FBCNet": {
+      "auc": 0.7712,
+      "balanced_accuracy": 0.72,
+      "sensitivity": 0.72,
+      "specificity": 0.72,
+      "brier_score": 0.19310932498357972
+    }
+  }
+}

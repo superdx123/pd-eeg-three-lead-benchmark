@@ -1,63 +1,84 @@
 # Three-lead Parkinson's disease EEG benchmark
 
-Research code for **BE-MSNet (Band-Expanded Multi-Scale Network)** on OpenNeuro **ds002778**, with subject-independent evaluation (**S**) and within-record window evaluation (**W**).
+Compare Parkinson's disease classifiers on the same C3, Cz and C4 inputs
+under subject-independent evaluation, within-recording window evaluation,
+and frozen cross-cohort transfer. The project includes BE-MSNet, the
+comparison models, fixed experiment recipes, score aggregation, and
+scripts for rebuilding the manuscript figures.
 
-Project-authored code and documentation are publicly available under [MIT](LICENSE). This code release covers the ds002778 BE-MSNet S/W experiments; it is not the complete software release for every analysis in the accompanying manuscript.
+## Install
 
-## Model names
-
-The manuscript calls the network **BE-MSNet**. Frozen code and configuration files retain the identifier `DS28` and model key `DS28_BR_MS_AUG_LS_WD3`. These names refer to the same configuration, not different models. Keeping the original identifiers preserves compatibility with the recorded configurations, predictions and hashes. Similarly, `PrimaryCNN` is the frozen identifier for the manuscript's **4L-CNN** baseline; this package does not contain that baseline's complete experimental pipeline.
-
-## Included material
-
-| Location | Contents |
-| --- | --- |
-| `source_snapshot/experiments/S/` | Five-seed nested LOSO configurations and training/validation entry points |
-| `source_snapshot/experiments/W/` | Five-seed, five-repeat, five-fold within-record configurations and entry points |
-| `source_snapshot/experiments/*/frozen_ds/dsmodel/` | Network definitions and input transforms |
-| `source_snapshot/experiments/*/frozen_ds/dstraining/` | Optimization, inner selection and final training |
-| `source_snapshot/verify_scores.py` | Metric verification from saved predictions in the separate archive |
-| `source_snapshot/predict_saved_weights.py` | Reduced-checkpoint inference adapter for the separate archive |
-| `tools/prepare_source_snapshot.py` | Static source and archive integrity checks |
-| `tests/` | Standard-library integrity and packaging tests |
-| `archive.lock.json` | Filename, size and SHA-256 of the separately stored archive |
-
-The 52 files in `source_snapshot/` are preserved byte-for-byte. Complete ds003490 pipelines, other baseline runs, manuscript figure-generation pipelines, weights, EEG inputs, split tables and participant-level records are outside this release. Dataset and dependency terms are described in [NOTICE.md](NOTICE.md).
-
-## Quick checks
-
-Python 3.10 or later is sufficient for the source checks. They do not require PyTorch, a GPU or EEG data:
+Use Python 3.10–3.12 in a virtual environment. For a CPU installation:
 
 ```sh
-python -B tools/prepare_source_snapshot.py --verify
-python -B -m unittest discover -s tests -v
+python -m pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -e .
+python -m unittest discover -s tests -v
 ```
 
-These commands validate file hashes, parse Python and JSON, and test packaging safeguards. They do not train models, generate predictions or recalculate study metrics.
+For the original CUDA setup, use the PyTorch `cu121` wheel index instead.
+The original training used PyTorch 2.5.1 with CUDA 12.1. CPU validation is
+useful for checking the software; it does not establish numerical identity
+with a different device or library build.
 
-## Running the archived experiments
+## Get the benchmark inputs
 
-The source snapshot preserves the original layout and some local path defaults. Execution requires the matching inputs and bindings in the separate archive, rather than a standalone installation from this repository. Read [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) and [ENTRYPOINTS_AND_ATTRIBUTION.md](docs/ENTRYPOINTS_AND_ATTRIBUTION.md) before running an experimental entry point. Run without `-O` or `PYTHONOPTIMIZE`, because archived checks use assertions.
-
-The archive is pinned by `archive.lock.json`; no public archive download or DOI has been assigned. To verify an authorized local copy without extracting or executing it:
+The two source datasets are [ds002778](https://doi.org/10.18112/openneuro.ds002778.v1.0.5)
+and [ds003490](https://doi.org/10.18112/openneuro.ds003490.v1.1.0).
+For exact prepared inputs and split files, use the versioned
+`benchmark-inputs-v1.0.0.zip` when available on the
+[release page](https://github.com/superdx123/pd-eeg-three-lead-benchmark/releases).
+Verify and install a copy from the repository root:
 
 ```sh
-python -B tools/prepare_source_snapshot.py --verify --archive "/path/to/ds28_778_LOCAL_REVIEW_CANDIDATE_v3.zip"
+python scripts/install_inputs.py /path/to/benchmark-inputs-v1.0.0.zip
 ```
 
-The reduced checkpoints in that archive passed CPU structure checks. Their real-EEG forward replay remains unverified; validation of the original saved training checkpoints is a separate result. The archive is therefore not included in this code-only publication.
+The archive is distributed separately from Git. If it is not available on the
+release page, the source checkout alone cannot reproduce the reported values.
+[Data preparation](docs/data.md) explains the input format and the pure
+eyes-open ds003490 preprocessing. Exact ds002778 reproduction starts from the
+retained preprocessed windows because the original raw-to-window execution
+cannot be reconstructed.
 
-## Reported aggregate results
+## Run the benchmark
 
-| Cohort | Protocol | AUC | Balanced accuracy |
-| --- | --- | ---: | ---: |
-| ds002778 | S: nested subject-level LOSO | 0.8458 | 0.7417 |
-| ds002778 | W: mean of 25 within-record test-fold subject metrics | 0.9913 | 0.9378 |
+The following lists a single subject-independent job. Add `--run` to execute
+it and save a checkpoint, selection records and predictions.
 
-Both results use five-seed probability ensembles. The W summary is not a pooled out-of-fold estimate. These numbers are the recorded aggregate results; preparing this repository does not introduce a new experimental run.
+```sh
+python scripts/reproduce.py --experiment benchmark-s --cohort ds002778 --model BE-MSNet --seed 11 --fold 1
+```
 
-## Integrity and licensing
+See [Experiments](docs/experiments.md) for the remaining runs, independent
+checkpoint inference and score computation. To render figures directly from
+the included reference estimates without data or training:
 
-`repo_files_manifest.json` inventories the released files and their SHA-256 values. `local_ready_receipt.json` records local static checks. Root licensing and scope statements apply to this release; documents mirrored under `source_snapshot/` retain the original archive's preparation status and terminology. Its adapter v2 notes are superseded by the preserved `ADAPTER_V3_CHANGELOG.md`.
+```sh
+python scripts/plot_figures.py --output outputs/figures --formats pdf svg
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for maintenance rules and [RELEASE_CHECKLIST.md](docs/RELEASE_CHECKLIST.md) for publication steps.
+## Reference scores
+
+BE-MSNet subject-level AUC and balanced accuracy:
+
+| Dataset | S AUC | S bAcc | W AUC | W bAcc |
+| --- | ---: | ---: | ---: | ---: |
+| ds002778 | 0.8458 | 0.7417 | 0.9913 | 0.9378 |
+| ds003490 (eyes open) | 0.7248 | 0.7000 | 0.9265 | 0.8488 |
+
+S holds out subjects. W holds out windows within the same recordings and
+averages subject-level scores by test fold. These are distinct estimands.
+The estimates above are reference results from the study, not from the
+synthetic software tests.
+
+BE-MSNet expands three recorded leads to 18 input waveforms before the
+multi-scale network. In the original experiment files it was named
+`DS28_BR_MS_AUG_LS_WD3`. The four-layer CNN was named `PrimaryCNN`.
+
+## Citation and license
+
+Cite the two OpenNeuro dataset records and the accompanying benchmark
+manuscript. Pin the code commit used for your run. Project code is released
+under [MIT](LICENSE); upstream software and data retain their own terms.
+See [NOTICE](NOTICE.md) for model sources.

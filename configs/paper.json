@@ -1,0 +1,32 @@
+{
+  "cohorts": {
+    "ds002778": {
+      "path": "data/processed/ds002778.npz",
+      "subjects": 31,
+      "inner_seed_base": 730000,
+      "sha256": "f00315271235e23cff51c28604c20e2ec151ca30508953cef44cc4dc1deaf06b",
+      "splits": "data/splits/ds002778",
+      "split_sha256": {
+        "s_outer.csv": "9c73f7082d30122d2d38c8b6405f1b3eed21df99b5511ddaa06cf9cf3076f0cc",
+        "s_inner.csv": "b822301172c1ab9648718bbeee9562fe6b9c233ba3086e68bb6cc724f30a4d4a",
+        "w_windows.csv": "9f2d238f2672795e34fad5e4962dbec12f817a9a58527f0685723080f0aa38db"
+      },
+      "time_manifest": "data/times/ds002778.csv",
+      "time_sha256": "f37f197cd06d6223a022881dc79a570af302da3c0205e0232b646fe0f1ac8b47"
+    },
+    "ds003490": {
+      "path": "data/processed/ds003490.npz",
+      "subjects": 50,
+      "inner_seed_base": 830000,
+      "sha256": "87e44b301c4651335d6576561108861c2b11611ef288d0cbd629465c652c1d8a",
+      "splits": "data/splits/ds003490",
+      "split_sha256": {
+        "s_outer.csv": "6ee6826df1927525455f0f2dc0cd7fc78356c8a99c20e665749af97c052c174b",
+        "s_inner.csv": "0e67a365168a98b7d1b934486345cdd1e9d60b21bc9e1dc4b8cced7fa33effd0",
+        "w_windows.csv": "b804e1ef5d90184f61c99f457a54e292c958bf0b365373ba5b4343ce68c5c0fd"
+      },
+      "time_manifest": "data/times/ds003490.csv",
+      "time_sha256": "76783dafbf789108ffff76fde0f41cecafd67a06f5d0c1094cfb009ff71d250c"
+    }
+  }
+}

@@ -1,0 +1,2286 @@
+{
+  "figures": {
+    "s_paired_differences": {
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "axis_limits": [
+        -0.235,
+        0.675
+      ],
+      "labeled_ticks": [
+        -0.2,
+        0,
+        0.2,
+        0.4,
+        0.6
+      ],
+      "reference_line": 0,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.235,
+            0.675
+          ],
+          "ticks": [
+            -0.2,
+            0,
+            0.2,
+            0.4,
+            0.6
+          ],
+          "reference": 0,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.235,
+            0.675
+          ],
+          "ticks": [
+            -0.2,
+            0,
+            0.2,
+            0.4,
+            0.6
+          ],
+          "reference": 0,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.235,
+            0.675
+          ],
+          "ticks": [
+            -0.2,
+            0,
+            0.2,
+            0.4,
+            0.6
+          ],
+          "reference": 0,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.235,
+            0.675
+          ],
+          "ticks": [
+            -0.2,
+            0,
+            0.2,
+            0.4,
+            0.6
+          ],
+          "reference": 0,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "records": [
+        {
+          "model": "EEGConformer",
+          "point": 0.04166666666666663,
+          "ci95": [
+            -0.025000000000000022,
+            0.1166666666666667
+          ],
+          "estimate_label": "+0.0417",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.09166666666666667,
+          "ci95": [
+            -0.01666666666666672,
+            0.22916666666666663
+          ],
+          "estimate_label": "+0.0917",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.1416666666666666,
+          "ci95": [
+            0.03749999999999998,
+            0.2875
+          ],
+          "estimate_label": "+0.1417",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.1333333333333333,
+          "ci95": [
+            -0.02083333333333337,
+            0.30833333333333335
+          ],
+          "estimate_label": "+0.1333",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.19999999999999996,
+          "ci95": [
+            0.04999999999999993,
+            0.39583333333333337
+          ],
+          "estimate_label": "+0.2000",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.1791666666666667,
+          "ci95": [
+            0.0040624999999999915,
+            0.3833333333333333
+          ],
+          "estimate_label": "+0.1792",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.17083333333333328,
+          "ci95": [
+            -0.008333333333333304,
+            0.35
+          ],
+          "estimate_label": "+0.1708",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.26249999999999996,
+          "ci95": [
+            0.06666666666666665,
+            0.475
+          ],
+          "estimate_label": "+0.2625",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.35833333333333334,
+          "ci95": [
+            0.17489583333333328,
+            0.5625
+          ],
+          "estimate_label": "+0.3583",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.17500000000000004,
+          "ci95": [
+            0.04166666666666663,
+            0.31250000000000006
+          ],
+          "estimate_label": "+0.1750",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.425,
+          "ci95": [
+            0.25,
+            0.6166666666666667
+          ],
+          "estimate_label": "+0.4250",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": -0.03359999999999996,
+          "ci95": [
+            -0.11364000000000003,
+            0.03523999999999979
+          ],
+          "estimate_label": "-0.0336",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.02400000000000002,
+          "ci95": [
+            -0.04799999999999993,
+            0.09759999999999991
+          ],
+          "estimate_label": "+0.0240",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.006399999999999961,
+          "ci95": [
+            -0.06724000000000004,
+            0.07520000000000004
+          ],
+          "estimate_label": "+0.0064",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": -0.0464,
+          "ci95": [
+            -0.15359999999999996,
+            0.06083999999999986
+          ],
+          "estimate_label": "-0.0464",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.07520000000000004,
+          "ci95": [
+            -0.011199999999999988,
+            0.15840000000000004
+          ],
+          "estimate_label": "+0.0752",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.01759999999999995,
+          "ci95": [
+            -0.11523999999999997,
+            0.15039999999999992
+          ],
+          "estimate_label": "+0.0176",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.07999999999999996,
+          "ci95": [
+            -0.03839999999999999,
+            0.20639999999999992
+          ],
+          "estimate_label": "+0.0800",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.13759999999999994,
+          "ci95": [
+            0.02399999999999991,
+            0.24479999999999996
+          ],
+          "estimate_label": "+0.1376",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.13280000000000003,
+          "ci95": [
+            0.008000000000000007,
+            0.26880000000000004
+          ],
+          "estimate_label": "+0.1328",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.0031999999999999806,
+          "ci95": [
+            -0.09760000000000002,
+            0.09919999999999995
+          ],
+          "estimate_label": "+0.0032",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.07520000000000004,
+          "ci95": [
+            -0.040000000000000036,
+            0.20640000000000003
+          ],
+          "estimate_label": "+0.0752",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.05833333333333335,
+          "ci95": [
+            -0.07083333333333341,
+            0.1875
+          ],
+          "estimate_label": "+0.0583",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.16041666666666676,
+          "ci95": [
+            0.03333333333333344,
+            0.29166666666666674
+          ],
+          "estimate_label": "+0.1604",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.1875,
+          "ci95": [
+            0.0625,
+            0.3125
+          ],
+          "estimate_label": "+0.1875",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.09583333333333333,
+          "ci95": [
+            -0.09375,
+            0.2895833333333333
+          ],
+          "estimate_label": "+0.0958",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.19583333333333341,
+          "ci95": [
+            0.06458333333333344,
+            0.35625
+          ],
+          "estimate_label": "+0.1958",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.19374999999999998,
+          "ci95": [
+            -0.029166666666666785,
+            0.39583333333333337
+          ],
+          "estimate_label": "+0.1938",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.22708333333333341,
+          "ci95": [
+            0.06458333333333344,
+            0.3916666666666667
+          ],
+          "estimate_label": "+0.2271",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.16458333333333341,
+          "ci95": [
+            0.004166666666666652,
+            0.32500000000000007
+          ],
+          "estimate_label": "+0.1646",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.3541666666666667,
+          "ci95": [
+            0.19369791666666655,
+            0.5208333333333334
+          ],
+          "estimate_label": "+0.3542",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.09583333333333333,
+          "ci95": [
+            0,
+            0.22291666666666665
+          ],
+          "estimate_label": "+0.0958",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.32083333333333336,
+          "ci95": [
+            0.16041666666666676,
+            0.4833333333333334
+          ],
+          "estimate_label": "+0.3208",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.039999999999999925,
+          "ci95": [
+            -0.06000000000000005,
+            0.14
+          ],
+          "estimate_label": "+0.0400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.039999999999999925,
+          "ci95": [
+            -0.040000000000000036,
+            0.12
+          ],
+          "estimate_label": "+0.0400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.05999999999999994,
+          "ci95": [
+            -0.05999999999999994,
+            0.17999999999999994
+          ],
+          "estimate_label": "+0.0600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": -0.020000000000000018,
+          "ci95": [
+            -0.14,
+            0.09999999999999998
+          ],
+          "estimate_label": "-0.0200",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.020000000000000018,
+          "ci95": [
+            -0.09999999999999998,
+            0.14
+          ],
+          "estimate_label": "+0.0200",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.07999999999999985,
+          "ci95": [
+            -0.040000000000000036,
+            0.20000000000000007
+          ],
+          "estimate_label": "+0.0800",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.039999999999999925,
+          "ci95": [
+            -0.07999999999999996,
+            0.14000000000000012
+          ],
+          "estimate_label": "+0.0400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.09999999999999987,
+          "ci95": [
+            -0.040000000000000036,
+            0.24
+          ],
+          "estimate_label": "+0.1000",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.1399999999999999,
+          "ci95": [
+            0,
+            0.28
+          ],
+          "estimate_label": "+0.1400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.07999999999999985,
+          "ci95": [
+            -0.020000000000000018,
+            0.19999999999999996
+          ],
+          "estimate_label": "+0.0800",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.05999999999999994,
+          "ci95": [
+            -0.06000000000000005,
+            0.19999999999999996
+          ],
+          "estimate_label": "+0.0600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        }
+      ],
+      "minimum_font_pt_at_174mm": 8.876566485527338
+    },
+    "s_absolute_intervals": {
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "axis_limits": [
+        -0.035,
+        1.035
+      ],
+      "labeled_ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ],
+      "reference_line": 0.5,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "records": [
+        {
+          "model": "BE-MSNet",
+          "point": 0.8458333333333333,
+          "ci95": [
+            0.6875,
+            0.9666666666666667
+          ],
+          "estimate_label": "0.8458",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.8041666666666667,
+          "ci95": [
+            0.6333333333333333,
+            0.9416666666666667
+          ],
+          "estimate_label": "0.8042",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.7541666666666667,
+          "ci95": [
+            0.575,
+            0.9
+          ],
+          "estimate_label": "0.7542",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.7041666666666667,
+          "ci95": [
+            0.5123958333333333,
+            0.8709374999999995
+          ],
+          "estimate_label": "0.7042",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.7125,
+          "ci95": [
+            0.5166666666666667,
+            0.8791666666666667
+          ],
+          "estimate_label": "0.7125",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.6458333333333334,
+          "ci95": [
+            0.43322916666666667,
+            0.825
+          ],
+          "estimate_label": "0.6458",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.6666666666666666,
+          "ci95": [
+            0.46239583333333334,
+            0.8458333333333333
+          ],
+          "estimate_label": "0.6667",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.675,
+          "ci95": [
+            0.4665625,
+            0.85
+          ],
+          "estimate_label": "0.6750",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.5833333333333334,
+          "ci95": [
+            0.36666666666666664,
+            0.7791666666666667
+          ],
+          "estimate_label": "0.5833",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.4875,
+          "ci95": [
+            0.2708333333333333,
+            0.6916666666666667
+          ],
+          "estimate_label": "0.4875",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.6708333333333333,
+          "ci95": [
+            0.4625,
+            0.8625
+          ],
+          "estimate_label": "0.6708",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.42083333333333334,
+          "ci95": [
+            0.225,
+            0.6251041666666661
+          ],
+          "estimate_label": "0.4208",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.7248,
+          "ci95": [
+            0.5808,
+            0.8656399999999999
+          ],
+          "estimate_label": "0.7248",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.7584,
+          "ci95": [
+            0.6208,
+            0.8848
+          ],
+          "estimate_label": "0.7584",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.7008,
+          "ci95": [
+            0.5535599999999999,
+            0.8416
+          ],
+          "estimate_label": "0.7008",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.7184,
+          "ci95": [
+            0.576,
+            0.8544399999999999
+          ],
+          "estimate_label": "0.7184",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.7712,
+          "ci95": [
+            0.6304,
+            0.8896
+          ],
+          "estimate_label": "0.7712",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.6496,
+          "ci95": [
+            0.4976,
+            0.8128
+          ],
+          "estimate_label": "0.6496",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.7072,
+          "ci95": [
+            0.5536,
+            0.8448
+          ],
+          "estimate_label": "0.7072",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.6448,
+          "ci95": [
+            0.48476,
+            0.792
+          ],
+          "estimate_label": "0.6448",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.5872,
+          "ci95": [
+            0.42716000000000004,
+            0.7504
+          ],
+          "estimate_label": "0.5872",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.592,
+          "ci95": [
+            0.43036,
+            0.7520399999999998
+          ],
+          "estimate_label": "0.5920",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.7216,
+          "ci95": [
+            0.5727599999999999,
+            0.8592
+          ],
+          "estimate_label": "0.7216",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.6496,
+          "ci95": [
+            0.4928,
+            0.8048399999999998
+          ],
+          "estimate_label": "0.6496",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.80625,
+          "ci95": [
+            0.6479166666666667,
+            0.9354166666666667
+          ],
+          "estimate_label": "0.8063",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.7479166666666667,
+          "ci95": [
+            0.61875,
+            0.875
+          ],
+          "estimate_label": "0.7479",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.6458333333333333,
+          "ci95": [
+            0.48125,
+            0.8063020833333331
+          ],
+          "estimate_label": "0.6458",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.61875,
+          "ci95": [
+            0.4583333333333333,
+            0.7791666666666667
+          ],
+          "estimate_label": "0.6188",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.7104166666666667,
+          "ci95": [
+            0.5479166666666666,
+            0.8666666666666667
+          ],
+          "estimate_label": "0.7104",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.6104166666666666,
+          "ci95": [
+            0.44375,
+            0.7708333333333333
+          ],
+          "estimate_label": "0.6104",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.6125,
+          "ci95": [
+            0.44791666666666663,
+            0.7770833333333333
+          ],
+          "estimate_label": "0.6125",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.5791666666666666,
+          "ci95": [
+            0.38958333333333334,
+            0.7416666666666667
+          ],
+          "estimate_label": "0.5792",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.6416666666666666,
+          "ci95": [
+            0.4770833333333333,
+            0.8041666666666667
+          ],
+          "estimate_label": "0.6417",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.45208333333333334,
+          "ci95": [
+            0.2603645833333333,
+            0.6166666666666667
+          ],
+          "estimate_label": "0.4521",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.7104166666666667,
+          "ci95": [
+            0.5479166666666666,
+            0.86875
+          ],
+          "estimate_label": "0.7104",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.48541666666666666,
+          "ci95": [
+            0.29583333333333334,
+            0.65
+          ],
+          "estimate_label": "0.4854",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.7,
+          "ci95": [
+            0.58,
+            0.8200000000000001
+          ],
+          "estimate_label": "0.7000",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.66,
+          "ci95": [
+            0.54,
+            0.78
+          ],
+          "estimate_label": "0.6600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.66,
+          "ci95": [
+            0.52,
+            0.78
+          ],
+          "estimate_label": "0.6600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.64,
+          "ci95": [
+            0.5,
+            0.76
+          ],
+          "estimate_label": "0.6400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.72,
+          "ci95": [
+            0.6,
+            0.8400000000000001
+          ],
+          "estimate_label": "0.7200",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.6799999999999999,
+          "ci95": [
+            0.56,
+            0.8
+          ],
+          "estimate_label": "0.6800",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.6200000000000001,
+          "ci95": [
+            0.48,
+            0.76
+          ],
+          "estimate_label": "0.6200",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.66,
+          "ci95": [
+            0.54,
+            0.78
+          ],
+          "estimate_label": "0.6600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.6000000000000001,
+          "ci95": [
+            0.46,
+            0.74
+          ],
+          "estimate_label": "0.6000",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.56,
+          "ci95": [
+            0.43950000000000006,
+            0.7
+          ],
+          "estimate_label": "0.5600",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.6200000000000001,
+          "ci95": [
+            0.48000000000000004,
+            0.76
+          ],
+          "estimate_label": "0.6200",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.64,
+          "ci95": [
+            0.5,
+            0.7604999999999973
+          ],
+          "estimate_label": "0.6400",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        }
+      ],
+      "minimum_font_pt_at_174mm": 8.876566485527338
+    },
+    "w_both": {
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "axis_limits": [
+        -0.035,
+        1.035
+      ],
+      "labeled_ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ],
+      "reference_line": 0.5,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "records": [
+        {
+          "model": "BE-MSNet",
+          "point": 0.9914999999999999,
+          "ci95": [
+            0.9689916666666667,
+            1
+          ],
+          "estimate_label": "0.9915",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.9795,
+          "ci95": [
+            0.931325,
+            1
+          ],
+          "estimate_label": "0.9795",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.9843333333333334,
+          "ci95": [
+            0.9506583333333333,
+            1
+          ],
+          "estimate_label": "0.9843",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.9778333333333333,
+          "ci95": [
+            0.9316541666666667,
+            0.9996666666666667
+          ],
+          "estimate_label": "0.9778",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.9478333333333333,
+          "ci95": [
+            0.8511416666666666,
+            0.9983333333333333
+          ],
+          "estimate_label": "0.9478",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.9623333333333332,
+          "ci95": [
+            0.8938333333333333,
+            0.999
+          ],
+          "estimate_label": "0.9623",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.9913333333333333,
+          "ci95": [
+            0.9676583333333334,
+            1
+          ],
+          "estimate_label": "0.9913",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.9556666666666667,
+          "ci95": [
+            0.8888291666666666,
+            0.9934999999999999
+          ],
+          "estimate_label": "0.9557",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.8933333333333333,
+          "ci95": [
+            0.7735000000000002,
+            0.9783333333333333
+          ],
+          "estimate_label": "0.8933",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.95,
+          "ci95": [
+            0.8771666666666665,
+            0.9943333333333333
+          ],
+          "estimate_label": "0.9500",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.9966666666666666,
+          "ci95": [
+            0.9871666666666667,
+            1
+          ],
+          "estimate_label": "0.9967",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.7468333333333333,
+          "ci95": [
+            0.5801166666666667,
+            0.8866708333333334
+          ],
+          "estimate_label": "0.7468",
+          "panel": "a",
+          "cohort": "778",
+          "metric": "auc"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.926528,
+          "ci95": [
+            0.8612447999999999,
+            0.976448
+          ],
+          "estimate_label": "0.9265",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.886592,
+          "ci95": [
+            0.8035184000000001,
+            0.9553295999999999
+          ],
+          "estimate_label": "0.8866",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.9036800000000001,
+          "ci95": [
+            0.8267488000000001,
+            0.9643520000000001
+          ],
+          "estimate_label": "0.9037",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.8952959999999999,
+          "ci95": [
+            0.8201391999999998,
+            0.9561727999999999
+          ],
+          "estimate_label": "0.8953",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.92768,
+          "ci95": [
+            0.8681583999999998,
+            0.9724831999999999
+          ],
+          "estimate_label": "0.9277",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.842304,
+          "ci95": [
+            0.7421968,
+            0.9301808000000001
+          ],
+          "estimate_label": "0.8423",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.9372799999999999,
+          "ci95": [
+            0.881144,
+            0.9785615999999999
+          ],
+          "estimate_label": "0.9373",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.837888,
+          "ci95": [
+            0.7342544,
+            0.9204047999999999
+          ],
+          "estimate_label": "0.8379",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.7961600000000001,
+          "ci95": [
+            0.684984,
+            0.8997183999999998
+          ],
+          "estimate_label": "0.7962",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.8986879999999999,
+          "ci95": [
+            0.8460048,
+            0.9448336
+          ],
+          "estimate_label": "0.8987",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.9409919999999998,
+          "ci95": [
+            0.8915136000000001,
+            0.9799072000000001
+          ],
+          "estimate_label": "0.9410",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.78496,
+          "ci95": [
+            0.6713536000000001,
+            0.8853136
+          ],
+          "estimate_label": "0.7850",
+          "panel": "b",
+          "cohort": "490",
+          "metric": "auc"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.9427499999999999,
+          "ci95": [
+            0.8694999999999999,
+            1
+          ],
+          "estimate_label": "0.9428",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.9296666666666666,
+          "ci95": [
+            0.8543333333333334,
+            0.98591875
+          ],
+          "estimate_label": "0.9297",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.9170000000000001,
+          "ci95": [
+            0.8414145833333334,
+            0.9781666666666666
+          ],
+          "estimate_label": "0.9170",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.9122499999999999,
+          "ci95": [
+            0.8244770833333334,
+            0.9822499999999998
+          ],
+          "estimate_label": "0.9123",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.8973333333333333,
+          "ci95": [
+            0.8189937500000001,
+            0.9583354166666666
+          ],
+          "estimate_label": "0.8973",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.8924166666666666,
+          "ci95": [
+            0.8024166666666667,
+            0.9645041666666667
+          ],
+          "estimate_label": "0.8924",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.8635833333333334,
+          "ci95": [
+            0.8150812500000001,
+            0.9038354166666666
+          ],
+          "estimate_label": "0.8636",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.8301666666666666,
+          "ci95": [
+            0.72833125,
+            0.9189166666666666
+          ],
+          "estimate_label": "0.8302",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.8155,
+          "ci95": [
+            0.7048333333333333,
+            0.9150895833333333
+          ],
+          "estimate_label": "0.8155",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.8799999999999999,
+          "ci95": [
+            0.7950791666666667,
+            0.9492541666666666
+          ],
+          "estimate_label": "0.8800",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.9541666666666667,
+          "ci95": [
+            0.9042270833333333,
+            0.9934166666666666
+          ],
+          "estimate_label": "0.9542",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.66775,
+          "ci95": [
+            0.5202479166666667,
+            0.8045041666666667
+          ],
+          "estimate_label": "0.6678",
+          "panel": "c",
+          "cohort": "778",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "BE-MSNet",
+          "point": 0.8488,
+          "ci95": [
+            0.7807799999999999,
+            0.9128
+          ],
+          "estimate_label": "0.8488",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGConformer",
+          "point": 0.7784,
+          "ci95": [
+            0.6984,
+            0.8552
+          ],
+          "estimate_label": "0.7784",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNeX",
+          "point": 0.8112000000000001,
+          "ci95": [
+            0.7288,
+            0.8888199999999999
+          ],
+          "estimate_label": "0.8112",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "ATCNet",
+          "point": 0.78,
+          "ci95": [
+            0.69918,
+            0.8568199999999999
+          ],
+          "estimate_label": "0.7800",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "FBCNet",
+          "point": 0.8336000000000001,
+          "ci95": [
+            0.7655799999999998,
+            0.8959999999999999
+          ],
+          "estimate_label": "0.8336",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "EEGNet",
+          "point": 0.7567999999999999,
+          "ci95": [
+            0.65998,
+            0.85202
+          ],
+          "estimate_label": "0.7568",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "4L-CNN",
+          "point": 0.7944000000000002,
+          "ci95": [
+            0.7391800000000001,
+            0.8463999999999999
+          ],
+          "estimate_label": "0.7944",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Lee-CRNN",
+          "point": 0.7208000000000001,
+          "ci95": [
+            0.624,
+            0.8176
+          ],
+          "estimate_label": "0.7208",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "PSD-AE-RBFNN",
+          "point": 0.7208,
+          "ci95": [
+            0.6272,
+            0.8152
+          ],
+          "estimate_label": "0.7208",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "RBF-SVM",
+          "point": 0.8152,
+          "ci95": [
+            0.7567999999999999,
+            0.8728199999999999
+          ],
+          "estimate_label": "0.8152",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "TDCNet†",
+          "point": 0.8584,
+          "ci95": [
+            0.7936000000000001,
+            0.9216
+          ],
+          "estimate_label": "0.8584",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        },
+        {
+          "model": "Spectral LR",
+          "point": 0.6944,
+          "ci95": [
+            0.5999799999999998,
+            0.78962
+          ],
+          "estimate_label": "0.6944",
+          "panel": "d",
+          "cohort": "490",
+          "metric": "balanced_accuracy"
+        }
+      ],
+      "minimum_font_pt_at_174mm": 8.876566485527338
+    },
+    "within_recording_vs_subject_independent": {
+      "minimum_final_font_pt": 8.876566485527338,
+      "style_contract": {
+        "width_inches": 7.1,
+        "font_pt": [
+          9.7,
+          9.2,
+          11.1
+        ],
+        "visible_spines": [
+          "bottom"
+        ],
+        "axis_lw_pt": 0.7,
+        "grid_lw_pt": 0.6,
+        "tick_lw_pt": 0.7,
+        "tick_length_pt": 3,
+        "tick_decimals": 1,
+        "estimate_decimals": 4,
+        "reference_line_lw_pt": 0.95,
+        "reference_dash_pt": [
+          2.6,
+          2.4
+        ],
+        "ci_lw_pt": 1.12,
+        "cap_length_pt": 4.9,
+        "cap_lw_pt": 0.85,
+        "marker": {
+          "BE-MSNet": "o",
+          "comparator": "s",
+          "paired_difference": "D"
+        },
+        "color": {
+          "BE-MSNet": "#356A9A",
+          "comparator": "#78838E",
+          "W_connector": "#D88940",
+          "ink": "#28333F",
+          "grid": "#E5E9ED",
+          "axis": "#AEB8C2",
+          "reference": "#989FA6",
+          "highlight": "#EEF3F8",
+          "stripe": "#F7F8F9"
+        }
+      },
+      "records": [
+        {
+          "panel": "a",
+          "cohort": "778",
+          "model": "BE-MSNet",
+          "metric": "auc",
+          "S": 0.8458333333333333,
+          "W": 0.9915,
+          "descriptive_W_minus_S": 0.14566666666666672
+        },
+        {
+          "panel": "a",
+          "cohort": "490",
+          "model": "BE-MSNet",
+          "metric": "auc",
+          "S": 0.7248,
+          "W": 0.926528,
+          "descriptive_W_minus_S": 0.20172800000000002
+        },
+        {
+          "panel": "b",
+          "cohort": "778",
+          "model": "BE-MSNet",
+          "metric": "balanced_accuracy",
+          "S": 0.80625,
+          "W": 0.9427500000000001,
+          "descriptive_W_minus_S": 0.13650000000000007
+        },
+        {
+          "panel": "b",
+          "cohort": "490",
+          "model": "BE-MSNet",
+          "metric": "balanced_accuracy",
+          "S": 0.7,
+          "W": 0.8488,
+          "descriptive_W_minus_S": 0.14880000000000004
+        }
+      ],
+      "axis_limits": [
+        -0.035,
+        1.035
+      ],
+      "labeled_ticks": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1
+      ],
+      "reference_line": 0.5,
+      "axis_geometry": [
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        },
+        {
+          "limits": [
+            -0.035,
+            1.035
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "reference": 0.5,
+          "visible_spines": [
+            "bottom"
+          ],
+          "axis_lw_pt": 0.7,
+          "tick_lw_pt": 0.7,
+          "tick_length_pt": 3,
+          "grid_lw_pt": 0.6,
+          "reference_line_lw_pt": 0.95
+        }
+      ],
+      "confidence_intervals_drawn": false,
+      "minimum_font_pt_at_174mm": 8.876566485527338
+    }
+  }
+}

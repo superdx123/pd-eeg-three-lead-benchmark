@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pd-eeg-three-lead-benchmark"
+version = "1.0.0"
+description = "Three-lead resting-state EEG benchmark for Parkinson's disease classification"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+  "numpy==2.2.6",
+  "pandas==2.3.3",
+  "scipy==1.15.3",
+  "scikit-learn==1.7.2",
+  "joblib>=1.4,<2",
+  "mne==1.12.1",
+  "matplotlib==3.10.8",
+  "torch==2.5.1",
+  "torchaudio==2.5.1",
+  "braindecode==1.2.0",
+]
+
+[project.urls]
+Repository = "https://github.com/superdx123/pd-eeg-three-lead-benchmark"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"pd_eeg.analysis" = ["data/*.json"]
