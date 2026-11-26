@@ -3,7 +3,8 @@ message: "If you use this software, cite the code version and the original datas
 title: "Three-lead Parkinson's disease EEG benchmark"
 type: software
 authors:
-  - name: "pd-eeg-three-lead-benchmark contributors"
+  - family-names: Dong
+    given-names: Xiang
 repository-code: "https://github.com/superdx123/pd-eeg-three-lead-benchmark"
 version: "1.0.0"
 license: MIT
