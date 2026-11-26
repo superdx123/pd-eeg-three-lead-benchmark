@@ -92,3 +92,14 @@ class CollectionTests(unittest.TestCase):
         self.write_run(self.job(), bad_model="BE-MSNet")
         with self.assertRaisesRegex(ValueError, "metadata disagrees"):
             self.score(allow_partial=True)
+
+    def test_seed_filter_still_requires_complete_selected_jobs(self):
+        for seed in (11, 22, 33, 44, 55):
+            self.write_run(Job("benchmark-s", self.cohort, "S", "BE-MSNet", seed))
+        options = {"project_root": self.root, "models": ["BE-MSNet"], "seeds": [11, 22, 33]}
+        with self.assertRaisesRegex(ValueError, "Missing 33 of 36 jobs"):
+            collect_predictions(self.runs, self.config, "benchmark-s", **options)
+        frame, found, planned = collect_predictions(self.runs, self.config, "benchmark-s",
+                                                     allow_partial=True, **options)
+        self.assertEqual((found, planned), (3, 36))
+        self.assertEqual(set(frame.seed), {11, 22, 33})

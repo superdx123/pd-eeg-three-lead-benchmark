@@ -54,7 +54,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Check command-line entry points
         run: |
-          for tool in analyze collect_predictions demographics install_inputs plot_figures prepare_data reproduce validate_models; do
+          for tool in analyze collect_predictions compare_tdc demographics install_inputs plot_figures prepare_data reproduce validate_models; do
             python "scripts/$tool.py" --help > /dev/null
           done
       - name: Rebuild reference figures

@@ -6,6 +6,7 @@ from collections import defaultdict
 import csv
 from itertools import combinations
 from pathlib import Path
+from statistics import fmean
 
 import numpy as np
 
@@ -168,8 +169,9 @@ def bootstrap_fold_metrics(labels, fold_probabilities, positive_counts, negative
     return {name: values / len(scores) for name, values in output.items()}
 
 
-def _model_scores(rows, protocol):
+def _model_scores(rows, protocol, *, ensemble_windows=False):
     labels, window_groups, window_sets = {}, defaultdict(list), defaultdict(set)
+    window_probabilities = defaultdict(list)
     for row in rows:
         subject, label = row["subject_id"], row["true_label"]
         if subject in labels and labels[subject] != label:
@@ -181,10 +183,16 @@ def _model_scores(rows, protocol):
                 raise ValueError("Duplicate window identifier within a seed and test fold")
             window_sets[key].add(row["window_id"])
         window_groups[key].append(row["prob_pd"])
+        if ensemble_windows:
+            if not row["window_id"]:
+                raise ValueError("Window identifiers are required for a window ensemble")
+            window_probabilities[(row["repeat"], row["fold"], subject, row["window_id"])].append(
+                row["prob_pd"])
     subjects = sorted(labels)
     truth = np.array([labels[subject] for subject in subjects], dtype=np.int64)
     seeds = sorted({row["seed"] for row in rows})
-    means = {key: float(np.mean(values)) for key, values in window_groups.items()}
+    average = fmean if ensemble_windows else np.mean
+    means = {key: float(average(values)) for key, values in window_groups.items()}
     foldwise = protocol in ("W", "time_blocked")
     fold_keys = sorted({(row["repeat"], row["fold"]) for row in rows}) if foldwise else [(0, 0)]
     by_seed = np.empty((len(seeds), len(fold_keys), len(subjects)), dtype=float)
@@ -203,7 +211,17 @@ def _model_scores(rows, protocol):
             nonempty = [value for value in sets if value]
             if nonempty and (len(nonempty) != len(sets) or any(value != nonempty[0] for value in nonempty)):
                 raise ValueError("Training seeds use different test windows")
-    scores = by_seed.mean(axis=0)
+    if ensemble_windows:
+        window_means = defaultdict(list)
+        for (repeat, fold, subject, _), probabilities in window_probabilities.items():
+            if len(probabilities) != len(seeds):
+                raise ValueError("Each test window must have one probability per matched seed")
+            unit = (repeat, fold) if foldwise else (0, 0)
+            window_means[(*unit, subject)].append(fmean(probabilities))
+        scores = np.array([[fmean(window_means[(repeat, fold, subject)]) for subject in subjects]
+                           for repeat, fold in fold_keys], dtype=float)
+    else:
+        scores = by_seed.mean(axis=0)
     return subjects, truth, scores, by_seed, seeds, fold_keys
 
 
@@ -242,7 +260,7 @@ def cohort_contrast(cohorts):
 
 
 def analyze_predictions(rows, *, replicates=2000, seed=None, threshold=0.5,
-                        reference="BE-MSNet"):
+                        reference="BE-MSNet", ensemble_windows=False):
     """Aggregate window probabilities, then estimate absolute and paired intervals.
 
     S, transfer and fixed subject-fold representation controls pool one OOF score
@@ -261,7 +279,8 @@ def analyze_predictions(rows, *, replicates=2000, seed=None, threshold=0.5,
               "interval": "percentile_95_conditional_on_fixed_predictions"}, "panels": []}
     contrast_inputs = {}
     for (cohort, protocol, experiment, source), model_rows in sorted(panels.items()):
-        matrices = {model: _model_scores(values, protocol) for model, values in model_rows.items()}
+        matrices = {model: _model_scores(values, protocol, ensemble_windows=ensemble_windows)
+                    for model, values in model_rows.items()}
         first = next(iter(matrices.values()))
         subjects, truth, _, _, _, folds = first
         for ids, labels, _, _, _, model_folds in matrices.values():

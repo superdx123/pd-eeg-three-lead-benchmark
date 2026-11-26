@@ -60,8 +60,27 @@ metadata with `participant_id`, `age` and `sex` or `gender`:
 python scripts/demographics.py --manifest data/splits/ds002778/s_outer.csv --metadata data/raw/ds002778/participants.tsv --sex-column gender --output outputs/demographics-778.json
 ```
 
-Training, saved-model inference, and plotting are separate operations.
-The statistics command compares models within an experiment. Matched
-comparisons across experiments, such as three-seed BE-MSNet versus strict
-TDCNet, are not assembled by this command. The figure command uses the
-included reference estimates rather than scores from new runs.
+## Matched TDCNet comparison
+
+Use saved run directories for the same cohort and protocol:
+
+```sh
+python scripts/compare_tdc.py --cohort ds002778 --protocol S --tdc-runs outputs/strict-tdc/ds002778/S/TDCNet --be-msnet-runs outputs/benchmark-s/ds002778/S/BE-MSNet --output outputs/matched-tdc-778-s.json
+```
+
+Add `--reference-runs outputs/tdc-reference/ds002778/S/TDCNet-reference` to
+include TDCNet†. Each arm must have every test job for seeds 11, 22 and 33.
+Seeds 44 and 55 in the benchmark directories are not used. The command
+checks that all three seeds use the same held-out windows across models.
+It averages probabilities across seeds at each window before averaging
+within subjects. It reports strict TDCNet minus each comparator, using
+2000 paired, class-stratified subject resamples (seed 20260930) and fixed
+threshold 0.5.
+W uses the same resampled subjects in all 25 test folds.
+
+The report describes the supplied runs. The ds002778 BE-MSNet comparator in
+the manuscript supplement used the initial saved predictions, not the new
+main benchmark run; matching seeds alone does not recover those predictions.
+
+The figure command uses the included reference estimates rather than scores
+from new runs.

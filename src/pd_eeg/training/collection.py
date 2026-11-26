@@ -11,15 +11,20 @@ from .workflow import Job, jobs, split_roles, verify_files
 
 
 def collect_predictions(runs, config, experiment, *, project_root=".", cohort=None,
-                        models=None, allow_partial=False):
+                        models=None, protocol=None, seeds=None, allow_partial=False):
     """Return labeled predictions from a complete plan or an explicit subset."""
     cohorts = config["cohorts"]
     selected_models = {model_name(name) for name in (models or ())}
-    planned = {
+    candidates = {
         job for job in jobs(experiment, cohorts)
         if (cohort is None or job.cohort == cohort)
         and (not selected_models or job.model in selected_models)
+        and (protocol is None or job.protocol == protocol)
     }
+    selected_seeds = set(seeds or ())
+    if selected_seeds.difference(job.seed for job in candidates):
+        raise ValueError("Requested seed is not part of the experiment plan")
+    planned = {job for job in candidates if not selected_seeds or job.seed in selected_seeds}
     if not planned:
         raise ValueError("No jobs match the requested experiment and filters")
 
@@ -27,12 +32,14 @@ def collect_predictions(runs, config, experiment, *, project_root=".", cohort=No
     for path in sorted(Path(runs).rglob("predictions.csv")):
         record = read_json(path.parent / "run.json")
         job = Job(**record["job"])
-        if job not in planned:
+        if job not in candidates:
             raise ValueError(f"Run does not belong to the requested plan: {job.name}")
-        if job in records:
-            raise ValueError(f"Duplicate job: {job.name}")
         if record["smoke"] is not False:
             raise ValueError(f"Smoke runs are not eligible for benchmark scoring: {job.name}")
+        if job not in planned:
+            continue
+        if job in records:
+            raise ValueError(f"Duplicate job: {job.name}")
         if record["threshold"] != 0.5:
             raise ValueError(f"Run does not use the fixed threshold: {job.name}")
         records[job] = (path, record)
