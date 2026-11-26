@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from pd_eeg.analysis.metrics import analyze_predictions
+from pd_eeg.analysis.metrics import analyze_predictions, normalize_row
 from pd_eeg.data import Dataset, save_dataset
 from pd_eeg.io import sha256
 from pd_eeg.training.workflow import Job, jobs, run_job, validate_job, verify_files
@@ -64,6 +64,8 @@ class WorkflowTests(unittest.TestCase):
                              "subject_id": f"id{i}", "true_label": truth, "prob_pd": .2 + .6 * truth,
                              "experiment": experiment, "variant": variant})
         panels = {item["experiment"]: item for item in analyze_predictions(rows, replicates=3)["panels"]}
+        normalized = analyze_predictions([normalize_row(row) for row in rows], replicates=3)
+        self.assertEqual(normalized["panels"], list(panels.values()))
         self.assertEqual(set(panels["ablation"]["models"]), {"BE-MSNet", "BE-MSNet (raw_only)"})
         self.assertIn("TDCNet (strict inner fitting)", panels["strict-tdc"]["models"])
         self.assertIn("TDCNet†", panels["tdc-reference"]["models"])

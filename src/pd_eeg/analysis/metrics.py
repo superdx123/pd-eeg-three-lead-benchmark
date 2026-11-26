@@ -73,7 +73,7 @@ def normalize_row(row):
         name = "TDCNet†"
     elif model == "TDCNet" and experiment == "strict-tdc":
         name = "TDCNet (strict inner fitting)"
-    if variant != "full":
+    if variant != "full" and not name.endswith(f" ({variant})"):
         name += f" ({variant})"
     return {
         "cohort": cohort, "protocol": protocol, "model": name,
